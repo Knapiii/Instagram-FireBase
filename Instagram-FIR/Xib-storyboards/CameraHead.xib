@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraPost" customModule="Instagram_FIR" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraHead" destination="Wbh-YE-fSv" id="tuz-f3-j3Q"/>
+                <outlet property="placeHolderImage" destination="rIz-pM-HRb" id="WQN-Xf-6sM"/>
+                <outlet property="textForPhoto" destination="M3I-JK-eDc" id="bT1-B9-6CS"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Wbh-YE-fSv" userLabel="ProfileHeader">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Agv-JK-zge">
+                    <rect key="frame" x="16" y="16" width="343" height="100"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-photo" translatesAutoresizingMaskIntoConstraints="NO" id="rIz-pM-HRb">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="cT1-Pn-ahu"/>
+                                <constraint firstAttribute="width" constant="100" id="myx-qo-sxZ"/>
+                            </constraints>
+                        </imageView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="#knape" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M3I-JK-eDc">
+                            <rect key="frame" x="103" y="0.0" width="240" height="100"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="70w-Ge-wKB"/>
+                        <constraint firstItem="M3I-JK-eDc" firstAttribute="height" secondItem="rIz-pM-HRb" secondAttribute="height" id="Y5r-h6-SRE"/>
+                        <constraint firstItem="rIz-pM-HRb" firstAttribute="top" secondItem="Agv-JK-zge" secondAttribute="top" id="jek-eG-PmM"/>
+                        <constraint firstItem="rIz-pM-HRb" firstAttribute="leading" secondItem="Agv-JK-zge" secondAttribute="leading" id="wHD-m0-ylO"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1H-OV-hww" userLabel="Line">
+                    <rect key="frame" x="0.0" y="131" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Q1H-OV-hww" secondAttribute="height" multiplier="375:1" id="OYs-ya-uMK"/>
+                        <constraint firstAttribute="height" constant="1" id="ySr-Ou-xhQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Agv-JK-zge" firstAttribute="top" secondItem="ukK-Xc-WB9" secondAttribute="top" constant="16" id="2Ou-cj-CfB"/>
+                <constraint firstAttribute="trailing" secondItem="Agv-JK-zge" secondAttribute="trailing" constant="16" id="5QT-AN-lCf"/>
+                <constraint firstAttribute="trailing" secondItem="Q1H-OV-hww" secondAttribute="trailing" id="JwS-sq-w2m"/>
+                <constraint firstItem="Agv-JK-zge" firstAttribute="leading" secondItem="ukK-Xc-WB9" secondAttribute="leading" constant="16" id="Kop-yM-agi"/>
+                <constraint firstItem="Q1H-OV-hww" firstAttribute="leading" secondItem="Wbh-YE-fSv" secondAttribute="leading" id="ZgA-JQ-9yL"/>
+                <constraint firstItem="Q1H-OV-hww" firstAttribute="leading" secondItem="Wbh-YE-fSv" secondAttribute="leading" id="emE-B7-wDS"/>
+                <constraint firstAttribute="bottom" secondItem="Q1H-OV-hww" secondAttribute="bottom" id="gZ7-qx-X6D"/>
+                <constraint firstItem="Q1H-OV-hww" firstAttribute="bottom" secondItem="ukK-Xc-WB9" secondAttribute="bottom" id="sV0-O0-jVQ"/>
+                <constraint firstItem="ukK-Xc-WB9" firstAttribute="bottom" secondItem="Agv-JK-zge" secondAttribute="bottom" constant="16" id="tOh-zd-yeO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ukK-Xc-WB9"/>
+            <point key="canvasLocation" x="-44" y="-394.90254872563719"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholder-photo" width="840" height="600"/>
+    </resources>
+</document>
