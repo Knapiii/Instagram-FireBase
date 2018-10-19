@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        self.setBackgroundImage("Background", contentMode: .scaleAspectFill)
+        self.setBackgroundImage(ImageName.signInBackground, contentMode: .scaleAspectFill)
         changeProfileImageOnClick()
         signUpButton.alpha = 0.5
         self.hideKeyboardWhenTappedAround()
@@ -111,7 +111,7 @@ class SignUpViewController: UIViewController {
         ProgressHUD.show("Waiting...")
         if let profileImg = self.selectImageFromPicker{
             if let imageData = profileImg.jpegData(compressionQuality: 0.1){
-                AuthService.signUp(username: username, email: email, password: password, imageData: imageData, signedIn: {
+                AuthServiceSign.signUp(username: username, email: email, password: password, imageData: imageData, signedIn: {
                     ProgressHUD.showSuccess("User created")
                     self.performSegue(withIdentifier: Identifier.SignUpIdentifier, sender: nil)
                 }) { (error) in

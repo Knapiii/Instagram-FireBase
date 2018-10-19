@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,7 +14,6 @@
         <!--Share View Controller-->
         <scene sceneID="stX-pP-6Yf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xFH-Ic-qN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Nom-s0-2Uq" customClass="ShareViewController" customModule="Instagram_FIR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AWk-GS-V5g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -28,13 +28,21 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcW-iu-skk">
                                 <rect key="frame" x="16" y="595" width="343" height="40"/>
-                                <color key="backgroundColor" name="ButtonColor"/>
+                                <color key="backgroundColor" name="ButtonBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IOM-O9-HpW"/>
                                 </constraints>
                                 <state key="normal" title="Share">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" name="ButtonEnabledText"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shareButton_TouchUp:" destination="Nom-s0-2Uq" eventType="touchUpInside" id="YLh-KV-bqu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,13 +58,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Eos-TQ-HcP">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="PVH-FQ-ggs">
-                            <color key="tintColor" name="ButtonColor"/>
+                            <color key="tintColor" name="ButtonBackgroundColor"/>
                             <connections>
                                 <action selector="dismiss:" destination="Nom-s0-2Uq" id="QSk-q9-mfW"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Vro-N6-I84">
-                            <color key="tintColor" name="ButtonColor"/>
+                            <color key="tintColor" name="ButtonBackgroundColor"/>
                             <connections>
                                 <action selector="cameraButton:" destination="Nom-s0-2Uq" id="n6N-Ar-VJF"/>
                             </connections>
@@ -64,15 +72,16 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cameraHeader" destination="Ffq-Fr-w4E" id="GUz-47-MEJ"/>
+                        <outlet property="shareButton" destination="WcW-iu-skk" id="8c5-jX-0Eo"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xFH-Ic-qN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="357.60000000000002" y="135.38230884557723"/>
         </scene>
         <!--ShareView-->
         <scene sceneID="9RX-hL-nVw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dzo-e0-jzi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="ShareView" title="ShareView" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qLs-Jf-ToG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DdH-dh-8a0">
@@ -84,13 +93,17 @@
                         <segue destination="Nom-s0-2Uq" kind="relationship" relationship="rootViewController" id="5ZN-xW-TiB"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dzo-e0-jzi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-455" y="137"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="ButtonColor">
-            <color red="0.0" green="0.58799999952316284" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="ButtonBackgroundColor">
+            <color red="0.0" green="0.58431372549019611" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonEnabledText">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

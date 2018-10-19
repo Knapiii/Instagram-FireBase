@@ -18,7 +18,7 @@ class SignInViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setBackgroundImage("Background", contentMode: .scaleAspectFill)
+        self.setBackgroundImage(ImageName.signInBackground, contentMode: .scaleAspectFill)
         self.hideKeyboardWhenTappedAround()
         signInButton.alpha = 0.5
         self.hideKeyboardWhenTappedAround()
@@ -26,7 +26,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AuthService.autoSignIn {
+        AuthServiceSign.autoSignIn {
             self.performSegue(withIdentifier: Identifier.SignInIdentifier, sender: nil)
         }
     }
@@ -42,7 +42,7 @@ class SignInViewController: UIViewController {
     @IBAction func SignIn(_ sender: Any) {
         view.endEditing(true)
         ProgressHUD.show("Waiting...")
-        AuthService.signIn(email: emailText.text!, password: passwordText.text!, signedIn: {
+        AuthServiceSign.signIn(email: emailText.text!, password: passwordText.text!, signedIn: {
             ProgressHUD.showSuccess("Logged in")
             self.performSegue(withIdentifier: Identifier.SignInIdentifier, sender: nil)
         }) { error in

@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
     
 
     @IBAction func signOut(_ sender: Any) {
-        AuthService.signOut(currentVC: self)
+        AuthServiceSign.signOut(currentVC: self)
     }
     
 }

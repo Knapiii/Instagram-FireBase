@@ -14,7 +14,7 @@ class CameraHead: UIView {
     
     @IBOutlet var cameraHead: UIView!
     @IBOutlet weak var placeHolderImage: UIImageView!
-    @IBOutlet weak var textForPhoto: UITextView!
+    @IBOutlet weak var caption: UITextView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,6 +32,7 @@ class CameraHead: UIView {
         addSubview(cameraHead)
         cameraHead.frame = self.bounds
         cameraHead.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        caption.placeholder = "Write an awesome caption"
     }
     
 

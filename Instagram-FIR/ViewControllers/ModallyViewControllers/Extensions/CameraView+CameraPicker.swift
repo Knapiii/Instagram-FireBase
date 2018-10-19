@@ -10,7 +10,7 @@ import Foundation
 
 extension ShareViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarDelegate, UITabBarControllerDelegate {
     
-    func openCamera() {
+    @objc func openCamera() {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
@@ -31,6 +31,13 @@ extension ShareViewController: UIImagePickerControllerDelegate, UINavigationCont
         
         dismiss(animated: true, completion: nil)
     }
+    
+    func changeProfileImageOnClick(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ShareViewController.openCamera))
+        cameraHeader.placeHolderImage.addGestureRecognizer(tapGesture)
+        cameraHeader.placeHolderImage.isUserInteractionEnabled = true
+    }
+    
 }
 
 

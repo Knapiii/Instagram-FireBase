@@ -12,28 +12,28 @@ import Firebase
 
 class AuthServiceUploadPost {
     
-    static func uploadPhoto(text: String, imageData: Data, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
+    static func uploadPhoto(caption: String, imageData: Data, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
         
         let photoString = UUID().uuidString
-        let storageRef = Storage.storage().reference(forURL: AuthConfig.StorageUrl).child(AuthConfig.uploadPhotoUrl).child(photoString)
+        let storageRef = Storage.storage().reference(forURL: AuthConfig.StorageUrl).child(AuthConfig.postUrl).child(photoString)
         storageRef.putData(imageData, metadata: nil) { (metadata, error) in
             if error != nil {
                 onError!(error!.localizedDescription)
                 return
             }
             let photoUrl = metadata?.downloadURL()?.absoluteString
-            self.sendPostDataToDatabase(photoUrl: photoUrl!, text: text, uploaded: {
+            self.sendPostDataToDatabase(photoUrl: photoUrl!, caption: caption, uploaded: {
                 uploaded!()
             })
         }
     }
     
-    static func sendPostDataToDatabase(photoUrl: String, text: String, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
+    static func sendPostDataToDatabase(photoUrl: String, caption: String, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
         let ref = Database.database().reference(fromURL: AuthConfig.FIRUrl)
-        let postsReference = ref.child(AuthConfig.uploadPhotoUrl)
+        let postsReference = ref.child(AuthConfig.postUrl)
         let newPostId = postsReference.childByAutoId().key
         let newPostReference = postsReference.child(newPostId)
-        newPostReference.setValue(["photoUrl": photoUrl, "caption": text], withCompletionBlock: {
+        newPostReference.setValue([FIRStrings.photoUrl: photoUrl, FIRStrings.caption: caption], withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 return

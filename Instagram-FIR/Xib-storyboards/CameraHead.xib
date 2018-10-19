@@ -24,14 +24,14 @@
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Agv-JK-zge">
                     <rect key="frame" x="16" y="16" width="343" height="100"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-photo" translatesAutoresizingMaskIntoConstraints="NO" id="rIz-pM-HRb">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-photo" translatesAutoresizingMaskIntoConstraints="NO" id="rIz-pM-HRb">
                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="cT1-Pn-ahu"/>
                                 <constraint firstAttribute="width" constant="100" id="myx-qo-sxZ"/>
                             </constraints>
                         </imageView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="#knape" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M3I-JK-eDc">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M3I-JK-eDc">
                             <rect key="frame" x="103" y="0.0" width="240" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

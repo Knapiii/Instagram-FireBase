@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,12 +26,11 @@
         <scene sceneID="rwq-qX-w49">
             <objects>
                 <tabBarController storyboardIdentifier="TabbarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cbs-Ux-NLx" customClass="TabbarController" customModule="Instagram_FIR" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="peG-OZ-TPz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" name="SignInButtonColor"/>
-                        <color key="selectedImageTintColor" name="SignInButtonColor"/>
+                        <color key="selectedImageTintColor" name="ButtonBackgroundColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="JW3-dw-C4W" kind="relationship" relationship="viewControllers" id="M2t-th-j07"/>
@@ -103,8 +103,8 @@
         <image name="Profile_Selected" width="20" height="21"/>
         <image name="Search" width="23" height="22"/>
         <image name="Search_Selected" width="23" height="22"/>
-        <namedColor name="SignInButtonColor">
-            <color red="0.0" green="0.58799999952316284" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="ButtonBackgroundColor">
+            <color red="0.0" green="0.58431372549019611" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

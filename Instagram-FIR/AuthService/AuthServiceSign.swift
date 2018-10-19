@@ -48,7 +48,7 @@ class AuthServiceSign {
             return
          }
          guard let uid = user?.uid else { return }
-         let storageRef = Storage.storage().reference(forURL: Config.StorageUrl).child(Config.ppUrl).child(uid)
+         let storageRef = Storage.storage().reference(forURL: AuthConfig.FIRUrl).child(AuthConfig.profilePictureUrl).child(uid)
          storageRef.putData(imageData, metadata: nil, completion: { (metaData, error) in
             if error != nil {
                return
@@ -62,12 +62,12 @@ class AuthServiceSign {
     
     static func setUserInformation(profilePicture: String, username: String, email: String, uid: String, signedIn: (() -> Void)? = nil) {
       
-        let ref = Database.database().reference(fromURL: Config.FIRUrl)
-        let profileUsersReference = ref.child(Config.userUrl).child(uid)
+        let ref = Database.database().reference(fromURL: AuthConfig.FIRUrl)
+        let profileUsersReference = ref.child(AuthConfig.userUrl).child(uid)
             
-        let values = [ "username": username,
-                       "email": email,
-                       "profileImageUrl": profilePicture as Any]
+        let values = [ FIRStrings.username: username,
+                       FIRStrings.email: email,
+                       FIRStrings.profileImageUrl: profilePicture as Any]
         profileUsersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
             if let err = err {
                 print(err)

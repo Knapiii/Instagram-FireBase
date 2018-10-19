@@ -12,8 +12,20 @@ struct AuthConfig {
     static var FIRUrl = "https://instagram-fir.firebaseio.com/"
     static var StorageUrl = "gs://instagram-fir.appspot.com"
     static var userUrl = "users"
-    static var ppUrl = "Profile_image"
-    static var uploadPhotoUrl = "posts"
+    static var profilePictureUrl = "Profile_image"
+    static var postUrl = "posts"
+}
+
+struct FIRStrings{
+    //Sign
+    static var username = "username"
+    static var email = "email"
+    static var profileImageUrl = "profileImageUrl"
+    
+    //Post
+    static var caption = "caption"
+    static var photoUrl = "photoUrl"
+    static var videoUrl = "videoUrl"
 }
 
 struct Storyboard {
@@ -27,9 +39,10 @@ struct Identifier {
 
 struct NibName {
     static var CameraHead = "CameraHead"
+    static var HomeTableCell = "HomeTableViewCell"
 }
 
-struct ImageNeme {
+struct ImageName {
     static var placeHolderPhoto = "placeholder-photo"
     static var signInBackground = "background"
     static var placeholderProfileImage = "placeholderProfileImage"

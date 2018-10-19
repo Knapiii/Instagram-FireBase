@@ -7,3 +7,34 @@
 //
 
 import Foundation
+import UIKit
+import Firebase
+
+private var alert = Alert()
+
+extension UIViewController {
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func performSegueToReturnBack()  {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func setBackgroundImage(_ imageName: String, contentMode: UIView.ContentMode) {
+        let backgroundImage = UIImageView(frame: self.view.bounds)
+        backgroundImage.image = UIImage(named: imageName)
+        backgroundImage.contentMode = contentMode
+        self.view.insertSubview(backgroundImage, at: 0)
+    }
+}
