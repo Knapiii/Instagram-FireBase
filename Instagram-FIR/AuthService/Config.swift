@@ -9,10 +9,10 @@
 import Foundation
 
 struct AuthConfig {
-    static var FIRUrl = "https://instagram-fir.firebaseio.com/"
+    static var FIRUrl = "https://instagram-fir.firebaseio.com"
     static var StorageUrl = "gs://instagram-fir.appspot.com"
     static var userUrl = "users"
-    static var profilePictureUrl = "Profile_image"
+    static var profilePictureUrl = "profile_image"
     static var postUrl = "posts"
 }
 
@@ -26,6 +26,7 @@ struct FIRStrings{
     static var caption = "caption"
     static var photoUrl = "photoUrl"
     static var videoUrl = "videoUrl"
+    static var uid = "uid"
 }
 
 struct Storyboard {

@@ -33,7 +33,14 @@ class AuthServiceUploadPost {
         let postsReference = ref.child(AuthConfig.postUrl)
         let newPostId = postsReference.childByAutoId().key
         let newPostReference = postsReference.child(newPostId)
-        newPostReference.setValue([FIRStrings.photoUrl: photoUrl, FIRStrings.caption: caption], withCompletionBlock: {
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        let currentUserId = currentUser.uid
+        newPostReference.setValue([FIRStrings.uid: currentUserId,
+                                   FIRStrings.photoUrl: photoUrl,
+                                   FIRStrings.caption: caption],
+                                  withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 return
@@ -42,5 +49,3 @@ class AuthServiceUploadPost {
         })
     }
 }
-
-

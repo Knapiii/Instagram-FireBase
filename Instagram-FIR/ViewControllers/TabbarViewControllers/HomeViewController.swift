@@ -8,12 +8,31 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewCell: HomeTableViewCell!
+    
+    var posts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Currently logged in as: \(Auth.auth().currentUser?.email as Any)")
-        // Do any additional setup after loading the view.
+        registerTableView()
+        loadPost()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    func loadPost() {
+        AuthServiceLoadPost.loadPosts { (post) in
+            self.posts.append(post)
+            print(self.posts)
+            self.tableView.reloadData()
+        }
     }
 }

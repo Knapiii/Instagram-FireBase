@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @IBDesignable
 class HomeTableViewCell: UITableViewCell {
@@ -19,6 +20,38 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var shareUIImage: UIImageView!
     @IBOutlet weak var amountOfLikes: UIButton!
     @IBOutlet weak var caption: UILabel!
+
+    
+    var post: Post? {
+        didSet {
+            updatePostView()
+        }
+    }
+    
+    func updatePostView() {
+        fetchPostInformation()
+        fetchUserInformation()
+    }
+    
+    func fetchPostInformation() {
+        caption!.text = post?.caption
+        if let photoUrlString = post?.photoUrl {
+            let photoUrl = URL(string: photoUrlString)
+            postImage.sd_setImage(with: photoUrl)
+        }
+    }
+    
+    func fetchUserInformation() {
+        if let uid = post?.uid {
+            AuthServiceLoadUser.loadUser(uid: uid) { (user) in
+                self.userName.text = user.username
+                if let photoUrlString = user.profileImageUrl{
+                    let photoUrl = URL(string: photoUrlString)
+                    self.userProfilePicture.sd_setImage(with: photoUrl)
+                }
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

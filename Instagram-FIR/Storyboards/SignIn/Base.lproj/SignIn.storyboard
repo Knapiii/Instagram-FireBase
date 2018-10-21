@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,7 +22,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jUC-in-8hu">
                                 <rect key="frame" x="16" y="220" width="382" height="76"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ra-oP-KHd" customClass="NextResponderTextField" customModule="NextResponderTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ra-oP-KHd">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -50,10 +51,9 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="signInAlpha:" destination="BYZ-38-t0r" eventType="editingChanged" id="E3o-Vj-Exf"/>
-                                            <outlet property="nextResponderField" destination="oEc-Zl-Zm3" id="zAo-u6-gdx"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oEc-Zl-Zm3" customClass="NextResponderTextField" customModule="NextResponderTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oEc-Zl-Zm3">
                                         <rect key="frame" x="0.0" y="46" width="382" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -170,7 +170,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="n3h-2I-n8w" userLabel="UserName">
                                 <rect key="frame" x="16" y="169" width="382" height="76"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46i-hf-0Yd" customClass="NextResponderTextField" customModule="NextResponderTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46i-hf-0Yd">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -198,10 +198,9 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="SignUpAlpha:" destination="qSK-92-bZg" eventType="editingChanged" id="HSq-Eg-U4R"/>
-                                            <outlet property="nextResponderField" destination="rXw-eb-dtt" id="hYL-xA-ule"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rXw-eb-dtt" customClass="NextResponderTextField" customModule="NextResponderTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rXw-eb-dtt">
                                         <rect key="frame" x="0.0" y="46" width="382" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -229,7 +228,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="SignUpAlpha:" destination="qSK-92-bZg" eventType="editingChanged" id="s64-Sc-IQF"/>
-                                            <outlet property="nextResponderField" destination="dvf-eO-pYA" id="LYz-93-egJ"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -265,7 +263,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="SignUp:" destination="qSK-92-bZg" eventType="touchUpInside" id="2bi-TU-bKZ"/>
+                                            <action selector="SignUp:" destination="qSK-92-bZg" eventType="touchUpInside" id="K62-g9-L6O"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5k-5G-bPb">
@@ -301,7 +299,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-9I-wfS">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvf-eO-pYA" userLabel="Password" customClass="NextResponderTextField" customModule="NextResponderTextField">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvf-eO-pYA" userLabel="Password">
                                                 <rect key="frame" x="0.0" y="0.0" width="344" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
@@ -327,7 +325,6 @@
                                                 <connections>
                                                     <action selector="SignUpAlpha:" destination="qSK-92-bZg" eventType="editingChanged" id="IHy-Ir-9wl"/>
                                                     <action selector="checkPassword:" destination="qSK-92-bZg" eventType="editingChanged" id="Ukg-jk-34E"/>
-                                                    <outlet property="nextResponderField" destination="V88-SE-Q6x" id="B3B-8u-FXz"/>
                                                 </connections>
                                             </textField>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box-red" translatesAutoresizingMaskIntoConstraints="NO" id="ZYK-7w-Ozo">
@@ -344,7 +341,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kbk-Q7-zji">
                                         <rect key="frame" x="0.0" y="46" width="382" height="30"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V88-SE-Q6x" userLabel="Repeat Password" customClass="NextResponderTextField" customModule="NextResponderTextField">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V88-SE-Q6x" userLabel="Repeat Password">
                                                 <rect key="frame" x="0.0" y="0.0" width="344" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
@@ -410,7 +407,7 @@
                         <outlet property="passwordRepeatText" destination="V88-SE-Q6x" id="AuQ-Sb-0Le"/>
                         <outlet property="passwordText" destination="dvf-eO-pYA" id="sSB-qj-HGz"/>
                         <outlet property="profileUIImage" destination="t68-Yi-XnJ" id="wBo-bp-v7D"/>
-                        <outlet property="signUpButton" destination="o68-Fb-XIX" id="beH-mS-UxH"/>
+                        <outlet property="signUpButton" destination="o68-Fb-XIX" id="eZ9-zP-dHh"/>
                         <outlet property="userNameText" destination="46i-hf-0Yd" id="eh0-b8-d1a"/>
                         <segue destination="Csm-6U-vTD" kind="presentation" identifier="SignUp" id="Z8S-Cq-iJJ"/>
                     </connections>
@@ -425,7 +422,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="TabbarController" storyboardName="TabbarController" referencedIdentifier="TabbarController" id="Csm-6U-vTD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIx-jc-EpH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="220" y="381"/>
+            <point key="canvasLocation" x="217" y="451"/>
         </scene>
     </scenes>
     <resources>

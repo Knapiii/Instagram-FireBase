@@ -14,6 +14,7 @@ extension Post {
         
         post.caption = dict[FIRStrings.caption] as? String
         post.photoUrl = dict[FIRStrings.photoUrl] as? String
+        post.uid = dict[FIRStrings.uid] as? String
         return post
     }
     
@@ -22,6 +23,7 @@ extension Post {
         
         post.caption = dict[FIRStrings.caption] as? String
         post.videoUrl = dict[FIRStrings.videoUrl] as? String
+        post.uid = dict[FIRStrings.uid] as? String
         return post
     }
     

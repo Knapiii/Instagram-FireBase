@@ -98,20 +98,17 @@ class SignUpViewController: UIViewController {
             createUser()
         }
     }
-    
-    @IBAction func SignUp(_ sender: Any) {
+
+    @IBAction func SignUp(_ sender: UIButton) {
         checkSignUp()
     }
     
     func createUser(){
-        let username = self.userNameText.text!
-        let email = self.emailText.text!
-        let password = self.passwordText.text!
         view.endEditing(true)
         ProgressHUD.show("Waiting...")
         if let profileImg = self.selectImageFromPicker{
             if let imageData = profileImg.jpegData(compressionQuality: 0.1){
-                AuthServiceSign.signUp(username: username, email: email, password: password, imageData: imageData, signedIn: {
+                AuthServiceSign.signUp(username: self.userNameText.text!, email: self.emailText.text!, password: self.passwordText.text!, imageData: imageData, signedIn: {
                     ProgressHUD.showSuccess("User created")
                     self.performSegue(withIdentifier: Identifier.SignUpIdentifier, sender: nil)
                 }) { (error) in

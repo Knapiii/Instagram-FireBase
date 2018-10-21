@@ -22,11 +22,10 @@
             </objects>
             <point key="canvasLocation" x="120" y="-891"/>
         </scene>
-        <!--Tabbar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="rwq-qX-w49">
             <objects>
-                <tabBarController storyboardIdentifier="TabbarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cbs-Ux-NLx" customClass="TabbarController" customModule="Instagram_FIR" customModuleProvider="target" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                <tabBarController storyboardIdentifier="TabbarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cbs-Ux-NLx" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="peG-OZ-TPz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
