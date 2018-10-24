@@ -16,6 +16,7 @@ struct AuthConfig {
     static var postUrl = "posts"
     static var commentUrl = "comments"
     static var postCommentUrl = "post-comment"
+    static var likesUrl = "likes"
 }
 
 struct FIRStrings{
@@ -33,6 +34,11 @@ struct FIRStrings{
     
     //Comments
     static var commentText = "commentText"
+}
+
+struct PostLikes {
+    static var likes = "likes"
+    static var likesCount = "likesCount"
 }
 
 struct Storyboard {
@@ -56,4 +62,17 @@ struct ImageName {
     static var placeHolderPhoto = "placeholder-photo"
     static var signInBackground = "background"
     static var placeholderProfileImage = "placeholderProfileImage"
+    static var like = "like"
+    static var likeSelected = "likeSelected"
+}
+
+struct Titles {
+    static var Comment = "Comment"
+    static var Home = "Home"
+//    static var Profile: String! {
+//        AuthServiceLoadUser.loadCurrentUser { (user) in
+//            let userId = user.username
+//            return userId
+//        }
+//    }
 }

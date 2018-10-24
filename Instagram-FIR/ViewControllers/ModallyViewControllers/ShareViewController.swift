@@ -53,7 +53,7 @@ class ShareViewController: UIViewController {
         ProgressHUD.show("Waiting...")
         if let profileImg = photo {
             if let imageData = profileImg.jpegData(compressionQuality: 0.1){
-                AuthServiceUploadPost.uploadPhoto(caption: caption, imageData: imageData, uploaded: {
+                API.uploadPostAPI.uploadPhoto(caption: caption, imageData: imageData, uploaded: {
                     ProgressHUD.showSuccess("Succes")
                     self.resetPost()
                     self.dismiss(animated: true, completion: nil)

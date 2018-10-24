@@ -12,8 +12,10 @@ import Firebase
 
 class LoadUserAPI {
     
-    static func loadUsers(uid: String, completion: @escaping (User) -> Void) {
-        Database.database().reference().child(AuthConfig.userUrl).child(uid).observe(.value, with: {
+    var refUsers = Database.database().reference().child(AuthConfig.userUrl)
+    
+    func loadUsers(uid: String, completion: @escaping (User) -> Void) {
+        refUsers.child(uid).observe(.value, with: {
             (snapshot) in
             if let dict = snapshot.value as? [String: Any] {
                 let user = User.transformUserDict(dict: dict)
@@ -22,9 +24,9 @@ class LoadUserAPI {
         }, withCancel: nil)
     }
     
-    static func loadCurrentUser(completion: @escaping (User) -> ()) {
+    func loadCurrentUser(completion: @escaping (User) -> ()) {
         guard let currentUser = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference().child(AuthConfig.userUrl).child(currentUser).observe(.value, with: {
+        refUsers.child(currentUser).observe(.value, with: {
             (snapshot) in
             if let dict = snapshot.value as? [String: Any] {
                 let user = User.transformUserDict(dict: dict)

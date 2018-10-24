@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 import Firebase
 
-class AuthServiceUploadComment {
+class UploadPostCommentAPI {
     
-    static func sendCommentDataToDatabase(comment: String, uploaded: ((String?) -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
-        let ref = Database.database().reference()
-        let commentsRef = ref.child(AuthConfig.commentUrl)
+    var commentsRef = Database.database().reference().child(AuthConfig.commentUrl)
+    
+    func sendCommentDataToDatabase(comment: String, uploaded: ((String?) -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
         let newCommentId = commentsRef.childByAutoId().key
         let newCommentRef = commentsRef.child(newCommentId)
         guard let currentUser = Auth.auth().currentUser else { return }
@@ -28,7 +28,7 @@ class AuthServiceUploadComment {
         }
     }
     
-    static func uploadPostComment(newCommentId: String, postId: String, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
+    func uploadPostComment(newCommentId: String, postId: String, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
         let newRef = Database.database().reference()
         let postCommentRef = newRef.child(AuthConfig.postCommentUrl).child(postId).child(newCommentId)
         postCommentRef.setValue(true, withCompletionBlock: { (error, ref) in

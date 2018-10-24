@@ -10,12 +10,15 @@ import Foundation
 import UIKit
 import Firebase
 
-class AuthServiceUploadPost {
+class UploadPostAPI {
     
-    static func uploadPhoto(caption: String, imageData: Data, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
+    var postRef = Database.database().reference(fromURL: AuthConfig.FIRUrl).child(AuthConfig.postUrl)
+    var storageRef = Storage.storage().reference(forURL: AuthConfig.StorageUrl).child(AuthConfig.postUrl)
+    
+    func uploadPhoto(caption: String, imageData: Data, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
         
         let photoString = UUID().uuidString
-        let storageRef = Storage.storage().reference(forURL: AuthConfig.StorageUrl).child(AuthConfig.postUrl).child(photoString)
+        storageRef.child(photoString)
         storageRef.putData(imageData, metadata: nil) { (metadata, error) in
             if error != nil {
                 onError!(error!.localizedDescription)
@@ -28,11 +31,9 @@ class AuthServiceUploadPost {
         }
     }
     
-    static func sendPostDataToDatabase(photoUrl: String, caption: String, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
-        let ref = Database.database().reference(fromURL: AuthConfig.FIRUrl)
-        let postsReference = ref.child(AuthConfig.postUrl)
-        let newPostId = postsReference.childByAutoId().key
-        let newPostReference = postsReference.child(newPostId)
+    func sendPostDataToDatabase(photoUrl: String, caption: String, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
+        let newPostId = postRef.childByAutoId().key
+        let newPostReference = postRef.child(newPostId)
         guard let currentUser = Auth.auth().currentUser else {
             return
         }

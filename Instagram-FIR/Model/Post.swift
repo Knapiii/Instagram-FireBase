@@ -14,4 +14,7 @@ class Post {
     var videoUrl: String?
     var uid: String?
     var id: String?
+    var likeCount: Int?
+    var likes: Dictionary<String, Any>?
+    var isLiked: Bool?
 }

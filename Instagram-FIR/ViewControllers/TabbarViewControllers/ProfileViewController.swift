@@ -13,6 +13,13 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTitle()
+    }
+    
+    func setTitle() {
+        API.loadUserAPI.loadCurrentUser { (user) in
+            self.title = user.username
+        }
     }
     
     @IBAction func signOut(_ sender: Any) {

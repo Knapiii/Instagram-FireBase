@@ -20,15 +20,19 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Currently logged in as: \(Auth.auth().currentUser?.email as Any)")
+        API.loadUserAPI.loadCurrentUser { (user) in
+            print(user.username!)
+        }
         registerTableView()
         loadPosts()
     }
     
     func loadPosts() {
         activityIndicator.startAnimating()
-        AuthServiceLoadPost.loadPosts { (post) in
-            self.fetchUser(uid: post.uid!, completion: {
+        API.loadPostAPI.loadPosts { (post) in
+            guard let postId = post.uid else { return }
+            self.fetchUser(uid: postId, completion: {
+                print("inne i fetch user")
                 self.posts.append(post)
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
@@ -37,7 +41,7 @@ class HomeViewController: UIViewController {
     }
     
     func fetchUser(uid: String, completion: (() -> Void)? = nil){
-        AuthServiceLoadUser.loadUser(uid: uid) { (user) in
+        API.loadUserAPI.loadUsers(uid: uid) { (user) in
             self.users.append(user)
             completion!()
         }

@@ -10,22 +10,24 @@ import UIKit
 
 class CommentViewController: UIViewController {
 
-    @IBOutlet weak var writeCommentField: WriteComment!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var userProfilePicture: UIImageView!
+    @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var commentButtonConstraint: NSLayoutConstraint!
     
     var postId: String!
     var comments = [Comment]()
     var users = [User]()
     
+    var loadPostAPI = LoadPostAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        writeCommentField.awakeFromNib()
         registerTableView()
         loadComments()
-        commentFollowKeyboard()
-        self.hideKeyboardWhenTappedAround()
+        writeCommentInit()
+        title = Titles.Comment
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,21 +40,25 @@ class CommentViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    func loadComments() {
-        AuthServiceLoadComment.loadComment(postId: postId) { (comment) in
-            self.fetchUser(uid: comment.uid!, completion: {
-                self.comments.append(comment)
-                self.tableView.reloadData()
-                print("POST ID: \(self.postId)")
-            })
-        }
+    @IBAction func sendComment_TouchUp(_ sender: Any) {
+        sendNewComment()
     }
     
     func fetchUser(uid: String, completion: (() -> Void)? = nil){
-        AuthServiceLoadUser.loadUser(uid: uid) { (user) in
+        API.loadUserAPI.loadUsers(uid: uid) { (user) in
             self.users.append(user)
             completion!()
         }
     }
+
+    func loadComments() {
+        API.loadPostCommentAPI.loadComment(postId: postId) { (comment) in
+            self.fetchUser(uid: comment.uid!, completion: {
+                self.comments.append(comment)
+                self.tableView.reloadData()
+            })
+        }
+    }
+
 }
 

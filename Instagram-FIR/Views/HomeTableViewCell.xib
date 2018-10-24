@@ -62,12 +62,12 @@
                                     <constraint firstAttribute="width" constant="20" id="vxL-oU-oXp"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlA-tl-sVn">
-                                <rect key="frame" x="16" y="354" width="111" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlA-tl-sVn">
+                                <rect key="frame" x="16" y="354" width="125" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="yK4-BE-626"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Be the first to like">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -115,7 +115,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="amountOfLikes" destination="IlA-tl-sVn" id="evv-7v-m0b"/>
+                <outlet property="amountOfLikesButton" destination="IlA-tl-sVn" id="evv-7v-m0b"/>
                 <outlet property="caption" destination="Fj4-By-E4x" id="bxj-4o-NbZ"/>
                 <outlet property="commentsUIImage" destination="EZR-BA-Xvs" id="ZGg-Fi-bKG"/>
                 <outlet property="likesUIImage" destination="mQF-qn-wNc" id="GkJ-K0-fSv"/>

@@ -18,10 +18,11 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var likesUIImage: UIImageView!
     @IBOutlet weak var commentsUIImage: UIImageView!
     @IBOutlet weak var shareUIImage: UIImageView!
-    @IBOutlet weak var amountOfLikes: UIButton!
+    @IBOutlet weak var amountOfLikesButton: UIButton!
     @IBOutlet weak var caption: UILabel!
     
     var homeViewController: HomeViewController?
+    var postRef: DatabaseReference!
     
     var post: Post? {
         didSet {
@@ -41,7 +42,10 @@ class HomeTableViewCell: UITableViewCell {
             let photoUrl = URL(string: photoUrlString)
             postImage.sd_setImage(with: photoUrl)
         }
+        updateLike(post: post!)
     }
+    
+
     
     func fetchUserInformation() {
         userName.text = user!.username
@@ -56,6 +60,7 @@ class HomeTableViewCell: UITableViewCell {
         // Initialization code
         AppStyle.roundedCornersImageView(image: userProfilePicture)
         tapComment_TouchUp()
+        tapLike_TouchUp()
     }
     
     override func prepareForReuse() {
@@ -67,11 +72,11 @@ class HomeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-    
+        
     func tapComment_TouchUp() {
         commentsUIImage.addTapGestureRecognizer {
-            if let id = self.post?.id {
-                self.homeViewController?.performSegue(withIdentifier: Identifier.CommentIdentifier, sender: id)
+            if let postId = self.post?.id {
+                self.homeViewController?.performSegue(withIdentifier: Identifier.CommentIdentifier, sender: postId)
             }
         }
     }
