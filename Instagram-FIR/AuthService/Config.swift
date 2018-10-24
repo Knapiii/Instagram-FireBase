@@ -14,9 +14,13 @@ struct AuthConfig {
     static var userUrl = "users"
     static var profilePictureUrl = "profile_image"
     static var postUrl = "posts"
+    static var commentUrl = "comments"
+    static var postCommentUrl = "post-comment"
 }
 
 struct FIRStrings{
+    static var uid = "uid"
+
     //Sign
     static var username = "username"
     static var email = "email"
@@ -26,7 +30,9 @@ struct FIRStrings{
     static var caption = "caption"
     static var photoUrl = "photoUrl"
     static var videoUrl = "videoUrl"
-    static var uid = "uid"
+    
+    //Comments
+    static var commentText = "commentText"
 }
 
 struct Storyboard {
@@ -36,11 +42,14 @@ struct Storyboard {
 struct Identifier {
     static var SignUpIdentifier = "SignUp"
     static var SignInIdentifier = "SignIn"
+    static var CommentIdentifier = "CommentTableViewCell"
 }
 
 struct NibName {
     static var CameraHead = "CameraHead"
+    static var WriteComment = "WriteComment"
     static var HomeTableCell = "HomeTableViewCell"
+    static var CommentTableCell = "CommentTableViewCell"
 }
 
 struct ImageName {

@@ -23,14 +23,6 @@ extension UIViewController {
         view.endEditing(true)
     }
     
-    func performSegueToReturnBack()  {
-        if let nav = self.navigationController {
-            nav.popViewController(animated: true)
-        } else {
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
     func setBackgroundImage(_ imageName: String, contentMode: UIView.ContentMode) {
         let backgroundImage = UIImageView(frame: self.view.bounds)
         backgroundImage.image = UIImage(named: imageName)

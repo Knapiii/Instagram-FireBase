@@ -9,9 +9,9 @@
 import Foundation
 
 extension Post {
-    static func transformPostPhotoDict(dict: [String: Any]) -> Post{
+    static func transformPostPhotoDict(dict: [String: Any], key: String) -> Post{
         let post = Post()
-        
+        post.id = key
         post.caption = dict[FIRStrings.caption] as? String
         post.photoUrl = dict[FIRStrings.photoUrl] as? String
         post.uid = dict[FIRStrings.uid] as? String

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WriteComment" customModule="Instagram_FIR" customModuleProvider="target">
+            <connections>
+                <outlet property="commentTextField" destination="070-kD-UOy" id="c4c-sJ-exc"/>
+                <outlet property="sendButton" destination="F2E-6R-1DQ" id="224-oL-NtY"/>
+                <outlet property="userProfilePicture" destination="rxj-Lj-eEB" id="XMo-cr-Jif"/>
+                <outlet property="writeCommentUIView" destination="pHh-pv-2uS" id="DkH-Qh-Emu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pHh-pv-2uS" userLabel="WriteComment">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNr-MH-lOc" userLabel="Line">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="FKh-EB-bkw"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="070-kD-UOy">
+                    <rect key="frame" x="48" y="8" width="275" height="34"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2E-6R-1DQ">
+                    <rect key="frame" x="331" y="8" width="36" height="34"/>
+                    <state key="normal" title="Send">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="sendComment_TouchUp:" destination="-1" eventType="touchUpInside" id="Hpj-RB-8WH"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="rxj-Lj-eEB">
+                    <rect key="frame" x="8" y="9" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="Ndy-LU-DtF"/>
+                        <constraint firstAttribute="width" constant="32" id="cQZ-0l-Y0S"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="F2E-6R-1DQ" firstAttribute="top" secondItem="ar5-6l-ogD" secondAttribute="top" constant="8" id="4oI-wg-OPh"/>
+                <constraint firstItem="rxj-Lj-eEB" firstAttribute="top" secondItem="XNr-MH-lOc" secondAttribute="bottom" constant="8" id="Bep-Z0-SWh"/>
+                <constraint firstItem="XNr-MH-lOc" firstAttribute="leading" secondItem="pHh-pv-2uS" secondAttribute="leading" id="F2k-JM-g29"/>
+                <constraint firstItem="070-kD-UOy" firstAttribute="leading" secondItem="rxj-Lj-eEB" secondAttribute="trailing" constant="8" id="JN8-Fj-KJp"/>
+                <constraint firstItem="F2E-6R-1DQ" firstAttribute="leading" secondItem="070-kD-UOy" secondAttribute="trailing" constant="8" id="LRS-qn-ASI"/>
+                <constraint firstItem="070-kD-UOy" firstAttribute="top" secondItem="ar5-6l-ogD" secondAttribute="top" constant="8" id="UA1-ux-2LS"/>
+                <constraint firstAttribute="bottom" secondItem="F2E-6R-1DQ" secondAttribute="bottom" constant="8" id="UoP-nU-kiX"/>
+                <constraint firstItem="XNr-MH-lOc" firstAttribute="top" secondItem="ar5-6l-ogD" secondAttribute="top" id="Usd-gj-ECl"/>
+                <constraint firstItem="ar5-6l-ogD" firstAttribute="bottom" secondItem="070-kD-UOy" secondAttribute="bottom" constant="8" id="XKD-QT-ONI"/>
+                <constraint firstItem="rxj-Lj-eEB" firstAttribute="leading" secondItem="ar5-6l-ogD" secondAttribute="leading" constant="8" id="n6W-l4-FB2"/>
+                <constraint firstItem="ar5-6l-ogD" firstAttribute="trailing" secondItem="F2E-6R-1DQ" secondAttribute="trailing" constant="8" id="tKC-XJ-rsl"/>
+                <constraint firstAttribute="trailing" secondItem="XNr-MH-lOc" secondAttribute="trailing" id="yHS-WH-fQK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ar5-6l-ogD"/>
+            <point key="canvasLocation" x="-44" y="-394.90254872563719"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholderProfileImage" width="225" height="225"/>
+    </resources>
+</document>

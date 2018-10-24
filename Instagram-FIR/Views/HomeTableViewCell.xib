@@ -22,8 +22,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xa-Hf-1VB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="436"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrH-7H-L4X">
-                                <rect key="frame" x="60" y="24" width="64.5" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrH-7H-L4X">
+                                <rect key="frame" x="60" y="24" width="30.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -35,21 +35,20 @@
                                     <constraint firstAttribute="height" constant="32" id="oLG-3B-U4O"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo3" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kr8-pD-rwX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kr8-pD-rwX">
                                 <rect key="frame" x="0.0" y="60" width="375" height="250"/>
-                                <color key="backgroundColor" red="0.78066310760000002" green="0.78066310760000002" blue="0.78066310760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="dod-Eg-Hoo"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="EZR-BA-Xvs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Comment" translatesAutoresizingMaskIntoConstraints="NO" id="EZR-BA-Xvs">
                                 <rect key="frame" x="52" y="322" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Nr0-kQ-SsG"/>
                                     <constraint firstAttribute="width" constant="20" id="eCk-us-cX0"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Comment" translatesAutoresizingMaskIntoConstraints="NO" id="mQF-qn-wNc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="mQF-qn-wNc">
                                 <rect key="frame" x="16" y="322" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="S19-SA-3VQ"/>
@@ -73,7 +72,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fj4-By-E4x">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption not found" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fj4-By-E4x">
                                 <rect key="frame" x="16" y="382" width="343" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -118,8 +117,8 @@
             <connections>
                 <outlet property="amountOfLikes" destination="IlA-tl-sVn" id="evv-7v-m0b"/>
                 <outlet property="caption" destination="Fj4-By-E4x" id="bxj-4o-NbZ"/>
-                <outlet property="commentsUIImage" destination="mQF-qn-wNc" id="E0U-wv-svL"/>
-                <outlet property="likesUIImage" destination="EZR-BA-Xvs" id="HxR-b4-LrX"/>
+                <outlet property="commentsUIImage" destination="EZR-BA-Xvs" id="ZGg-Fi-bKG"/>
+                <outlet property="likesUIImage" destination="mQF-qn-wNc" id="GkJ-K0-fSv"/>
                 <outlet property="postImage" destination="Kr8-pD-rwX" id="sJb-e8-GeV"/>
                 <outlet property="shareUIImage" destination="awN-Mg-LA8" id="WNf-P5-wx6"/>
                 <outlet property="userName" destination="VrH-7H-L4X" id="ef5-vn-6iN"/>
@@ -131,7 +130,6 @@
     <resources>
         <image name="Comment" width="43" height="41"/>
         <image name="like" width="46" height="41"/>
-        <image name="photo3" width="1161.5999755859375" height="655.20001220703125"/>
         <image name="placeholderProfileImage" width="225" height="225"/>
         <image name="share" width="37" height="41"/>
     </resources>

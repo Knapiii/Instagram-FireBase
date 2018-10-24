@@ -37,10 +37,7 @@ class AuthServiceUploadPost {
             return
         }
         let currentUserId = currentUser.uid
-        newPostReference.setValue([FIRStrings.uid: currentUserId,
-                                   FIRStrings.photoUrl: photoUrl,
-                                   FIRStrings.caption: caption],
-                                  withCompletionBlock: {
+        newPostReference.setValue([FIRStrings.uid: currentUserId, FIRStrings.photoUrl: photoUrl, FIRStrings.caption: caption], withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 return

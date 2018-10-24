@@ -22,4 +22,16 @@ class AuthServiceLoadUser {
         }, withCancel: nil)
     }
     
+    static func loadCurrentUser(completion: @escaping (User) -> Void) {
+        guard let currentUser = Auth.auth().currentUser?.uid else { return }
+        Database.database().reference().child(AuthConfig.userUrl).child(currentUser).observe(.value, with: {
+            (snapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                let user = User.transformUserDict(dict: dict)
+                completion(user)
+            }
+        }, withCancel: nil)
+    }
+    
 }
+

@@ -13,4 +13,5 @@ class Post {
     var photoUrl: String?
     var videoUrl: String?
     var uid: String?
+    var id: String?
 }

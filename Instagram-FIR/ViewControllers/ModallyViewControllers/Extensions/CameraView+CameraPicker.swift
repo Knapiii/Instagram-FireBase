@@ -33,9 +33,9 @@ extension ShareViewController: UIImagePickerControllerDelegate, UINavigationCont
     }
     
     func changeProfileImageOnClick(){
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ShareViewController.openCamera))
-        cameraHeader.placeHolderImage.addGestureRecognizer(tapGesture)
-        cameraHeader.placeHolderImage.isUserInteractionEnabled = true
+        cameraHeader.placeHolderImage.addTapGestureRecognizer {
+            self.openCamera()
+        }
     }
     
 }
