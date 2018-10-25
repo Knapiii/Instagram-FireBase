@@ -42,11 +42,19 @@ class HomeTableViewCell: UITableViewCell {
             let photoUrl = URL(string: photoUrlString)
             postImage.sd_setImage(with: photoUrl)
         }
-        updateLike(post: post!)
+        API.PostLikes.observeLikes(postId: post!.id!) { (post) in
+            self.updateLike(post: post)
+        }
+        
+        API.LoadPost.observePost(withId: post!.id!) { post in
+            self.updateLike(post: post)
+        }
+        
+        API.PostLikes.observeLikeCount(postId: post!.id!) { (value) in
+            self.amountOfLikesButton.setTitle("\(value) likes", for: .normal)
+        }
     }
-    
 
-    
     func fetchUserInformation() {
         userName.text = user!.username
         if let photoUrlString = user!.profileImageUrl{

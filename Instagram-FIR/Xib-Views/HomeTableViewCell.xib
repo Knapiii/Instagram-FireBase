@@ -12,15 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="HomeTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="361" id="KGk-i7-Jjw" customClass="HomeTableViewCell" customModule="Instagram_FIR" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="433"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="HomeTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="348" id="KGk-i7-Jjw" customClass="HomeTableViewCell" customModule="Instagram_FIR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="420"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="432.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="419.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xa-Hf-1VB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="423"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrH-7H-L4X">
                                 <rect key="frame" x="60" y="24" width="30.5" height="16"/>
@@ -73,7 +73,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption not found" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fj4-By-E4x">
-                                <rect key="frame" x="16" y="382" width="343" height="22"/>
+                                <rect key="frame" x="16" y="382" width="343" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                         <constraints>
                             <constraint firstItem="Fj4-By-E4x" firstAttribute="leading" secondItem="2HM-69-Hyw" secondAttribute="leading" constant="16" id="5bX-IJ-yJC"/>
                             <constraint firstItem="Kr8-pD-rwX" firstAttribute="trailing" secondItem="2HM-69-Hyw" secondAttribute="trailing" id="6nl-GP-NzI"/>
-                            <constraint firstItem="2HM-69-Hyw" firstAttribute="bottom" secondItem="Fj4-By-E4x" secondAttribute="bottom" constant="32" id="7s7-u0-M7Z"/>
+                            <constraint firstItem="2HM-69-Hyw" firstAttribute="bottom" secondItem="Fj4-By-E4x" secondAttribute="bottom" constant="24" id="7s7-u0-M7Z"/>
                             <constraint firstItem="Fj4-By-E4x" firstAttribute="top" secondItem="IlA-tl-sVn" secondAttribute="bottom" constant="8" id="ACp-aG-fgt"/>
                             <constraint firstItem="EZR-BA-Xvs" firstAttribute="centerY" secondItem="mQF-qn-wNc" secondAttribute="centerY" id="BLQ-TB-y4p"/>
                             <constraint firstItem="awN-Mg-LA8" firstAttribute="centerY" secondItem="EZR-BA-Xvs" secondAttribute="centerY" id="BxJ-m1-ZY5"/>
@@ -124,7 +124,7 @@
                 <outlet property="userName" destination="VrH-7H-L4X" id="ef5-vn-6iN"/>
                 <outlet property="userProfilePicture" destination="YLw-Pf-Eqg" id="K2T-VD-DgA"/>
             </connections>
-            <point key="canvasLocation" x="216.80000000000001" y="291.90404797601201"/>
+            <point key="canvasLocation" x="216.80000000000001" y="286.05697151424289"/>
         </tableViewCell>
     </objects>
     <resources>

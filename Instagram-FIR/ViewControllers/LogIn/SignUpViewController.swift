@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseStorage
 
 class SignUpViewController: UIViewController {
 
@@ -26,11 +24,9 @@ class SignUpViewController: UIViewController {
     var isPicturePicked = false
     var samePassword = false
 
-    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
         self.setBackgroundImage(ImageName.signInBackground, contentMode: .scaleAspectFill)
         changeProfileImageOnClick()
         signUpButton.alpha = 0.5

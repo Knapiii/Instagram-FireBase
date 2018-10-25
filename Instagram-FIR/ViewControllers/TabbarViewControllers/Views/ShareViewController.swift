@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import Firebase
 
 class ShareViewController: UIViewController {
-
+    
     @IBOutlet weak var cameraHeader: CameraHead!
     var selectImageFromPicker: UIImage?
     @IBOutlet weak var shareButton: UIButton!
@@ -26,7 +25,7 @@ class ShareViewController: UIViewController {
         super.viewWillAppear(animated)
         handlePhoto()
     }
-        
+    
     @IBAction func dismiss(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -53,11 +52,11 @@ class ShareViewController: UIViewController {
         ProgressHUD.show("Waiting...")
         if let profileImg = photo {
             if let imageData = profileImg.jpegData(compressionQuality: 0.1){
-                API.uploadPostAPI.uploadPhoto(caption: caption, imageData: imageData, uploaded: {
+                API.UploadPost.uploadPhoto(caption: caption, imageData: imageData, uploaded: {
                     ProgressHUD.showSuccess("Succes")
                     self.resetPost()
                     self.dismiss(animated: true, completion: nil)
-                }) { (error) in
+                }) { error in
                     ProgressHUD.showError(error)
                 }
             }
@@ -71,5 +70,5 @@ class ShareViewController: UIViewController {
         self.selectImageFromPicker = UIImage(named: ImageName.placeHolderPhoto)
         self.selectImageFromPicker = nil
     }
-
+    
 }

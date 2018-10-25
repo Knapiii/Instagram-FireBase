@@ -7,18 +7,34 @@
 //
 
 import UIKit
-import Firebase
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    var user: User!
+    var posts: [Post] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTitle()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        fetchUser()
+        fetchMyPosts()
     }
     
-    func setTitle() {
-        API.loadUserAPI.loadCurrentUser { (user) in
-            self.title = user.username
+    func fetchUser() {
+        API.User.observeCurrentUser { (user) in
+            self.user = user
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func fetchMyPosts() {
+        API.MyPost.loadMyPosts { snapshot in
+            API.LoadPost.observePost(withId: snapshot.key, completion: { post in
+                self.posts.append(post)
+                self.collectionView.reloadData()
+            })
         }
     }
     

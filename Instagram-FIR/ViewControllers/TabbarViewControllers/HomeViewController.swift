@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import SDWebImage
 
 class HomeViewController: UIViewController {
@@ -20,8 +19,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        API.loadUserAPI.loadCurrentUser { (user) in
-            print(user.username!)
+        API.User.observeCurrentUser { (user) in
+            print("Current User: \(user.username!)")
         }
         registerTableView()
         loadPosts()
@@ -29,10 +28,9 @@ class HomeViewController: UIViewController {
     
     func loadPosts() {
         activityIndicator.startAnimating()
-        API.loadPostAPI.loadPosts { (post) in
+        API.LoadPost.observePost { (post) in
             guard let postId = post.uid else { return }
             self.fetchUser(uid: postId, completion: {
-                print("inne i fetch user")
                 self.posts.append(post)
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
@@ -41,7 +39,7 @@ class HomeViewController: UIViewController {
     }
     
     func fetchUser(uid: String, completion: (() -> Void)? = nil){
-        API.loadUserAPI.loadUsers(uid: uid) { (user) in
+        API.User.observeUser(uid: uid) { (user) in
             self.users.append(user)
             completion!()
         }

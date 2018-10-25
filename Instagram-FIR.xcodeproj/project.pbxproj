@@ -51,6 +51,12 @@
 		D2364A7A217F5A7B00530BF8 /* UIView+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2364A79217F5A7B00530BF8 /* UIView+Tap.swift */; };
 		D2364A8221808B4700530BF8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2364A8121808B4700530BF8 /* API.swift */; };
 		D2364A852180A8DF00530BF8 /* HomeTableViewCell+Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2364A842180A8DF00530BF8 /* HomeTableViewCell+Likes.swift */; };
+		D2364A872180B17400530BF8 /* PostLikesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2364A862180B17400530BF8 /* PostLikesAPI.swift */; };
+		D2364A892181B72000530BF8 /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2364A882181B72000530BF8 /* ProfileHeaderCollectionReusableView.swift */; };
+		D2364A8B2181DB6B00530BF8 /* UserPostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2364A8A2181DB6B00530BF8 /* UserPostAPI.swift */; };
+		D2364A8E2181EE3400530BF8 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2364A8D2181EE3400530BF8 /* PhotoCollectionViewCell.swift */; };
+		D2364A902181F47D00530BF8 /* ProfileView+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2364A8F2181F47D00530BF8 /* ProfileView+CollectionViewDataSource.swift */; };
+		D2364A922181F4AA00530BF8 /* ProfileView+CollecctionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2364A912181F4AA00530BF8 /* ProfileView+CollecctionViewFlowLayout.swift */; };
 		D27A06642174D24000E3386B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D27A06632174D24000E3386B /* GoogleService-Info.plist */; };
 		D2C8D4AB2175CBEA00EDD726 /* SignUp+CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8D4AA2175CBEA00EDD726 /* SignUp+CameraPicker.swift */; };
 		D2C8D4AE2175CD2000EDD726 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8D4AD2175CD2000EDD726 /* AppStyle.swift */; };
@@ -142,6 +148,12 @@
 		D2364A79217F5A7B00530BF8 /* UIView+Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Tap.swift"; sourceTree = "<group>"; };
 		D2364A8121808B4700530BF8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D2364A842180A8DF00530BF8 /* HomeTableViewCell+Likes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeTableViewCell+Likes.swift"; sourceTree = "<group>"; };
+		D2364A862180B17400530BF8 /* PostLikesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLikesAPI.swift; sourceTree = "<group>"; };
+		D2364A882181B72000530BF8 /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		D2364A8A2181DB6B00530BF8 /* UserPostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostAPI.swift; sourceTree = "<group>"; };
+		D2364A8D2181EE3400530BF8 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2364A8F2181F47D00530BF8 /* ProfileView+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileView+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		D2364A912181F4AA00530BF8 /* ProfileView+CollecctionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileView+CollecctionViewFlowLayout.swift"; sourceTree = "<group>"; };
 		D27A06632174D24000E3386B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2C8D4AA2175CBEA00EDD726 /* SignUp+CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUp+CameraPicker.swift"; sourceTree = "<group>"; };
 		D2C8D4AD2175CD2000EDD726 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
@@ -238,7 +250,7 @@
 				D219747E2174C6C200F77C3E /* Extensions */,
 				D2C8D4B8217745A100EDD726 /* AuthService */,
 				D2E944912179F96D0050BEBC /* Model */,
-				D2C8D4C521776D6300EDD726 /* Views */,
+				D2C8D4C521776D6300EDD726 /* Xib-Views */,
 				D21974672174AA3700F77C3E /* ViewControllers */,
 				D21974642174A68600F77C3E /* Storyboards */,
 				D219743A2174826E00F77C3E /* LaunchScreen.storyboard */,
@@ -282,7 +294,7 @@
 		D21974642174A68600F77C3E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				D234F62E2178AF090040E8EC /* ModallyStoryboards */,
+				D234F62E2178AF090040E8EC /* Views */,
 				D234F6292178AC3F0040E8EC /* TabbarController */,
 				D21974692174AA5000F77C3E /* TabBars */,
 				D21974682174AA4400F77C3E /* SignIn */,
@@ -294,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				D21974632174904100F77C3E /* LogIn */,
-				D234F62B2178AEAC0040E8EC /* ModallyViewControllers */,
 				D234F62A2178AC7D0040E8EC /* TabbarViewControllers */,
 			);
 			path = ViewControllers;
@@ -337,17 +348,12 @@
 		D2231234217B769B00A9A3AF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D234F61E217783110040E8EC /* CameraView+CameraPicker.swift */,
 				D2231235217B76AD00A9A3AF /* HomeView+TableView.swift */,
 				D2364A62217DC52F00530BF8 /* CommentView+TableView.swift */,
 				D2364A72217F50C800530BF8 /* CommentView+Keyboard.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D234F61D217783030040E8EC /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D234F61E217783110040E8EC /* CameraView+CameraPicker.swift */,
+				D2364A8F2181F47D00530BF8 /* ProfileView+CollectionViewDataSource.swift */,
+				D2364A912181F4AA00530BF8 /* ProfileView+CollecctionViewFlowLayout.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -374,26 +380,18 @@
 			path = TabbarViewControllers;
 			sourceTree = "<group>";
 		};
-		D234F62B2178AEAC0040E8EC /* ModallyViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				D234F61D217783030040E8EC /* Extensions */,
-				D234F62C2178AEDE0040E8EC /* ShareViewController.swift */,
-			);
-			path = ModallyViewControllers;
-			sourceTree = "<group>";
-		};
-		D234F62E2178AF090040E8EC /* ModallyStoryboards */ = {
+		D234F62E2178AF090040E8EC /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				D234F62F2178AF1B0040E8EC /* ShareView.storyboard */,
 			);
-			path = ModallyStoryboards;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D2364A5F217DBEA600530BF8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D234F62C2178AEDE0040E8EC /* ShareViewController.swift */,
 				D2364A60217DBEC800530BF8 /* CommentViewController.swift */,
 			);
 			path = Views;
@@ -407,6 +405,8 @@
 				D234F6312178C8C10040E8EC /* UploadPostAPI.swift */,
 				D2364A6C217F1A6000530BF8 /* LoadPostCommentAPI.swift */,
 				D2364A6A217DD33700530BF8 /* UploadPostCommentAPI.swift */,
+				D2364A8A2181DB6B00530BF8 /* UserPostAPI.swift */,
+				D2364A862180B17400530BF8 /* PostLikesAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -459,7 +459,7 @@
 			name = ProgressHUD;
 			sourceTree = "<group>";
 		};
-		D2C8D4C521776D6300EDD726 /* Views */ = {
+		D2C8D4C521776D6300EDD726 /* Xib-Views */ = {
 			isa = PBXGroup;
 			children = (
 				D2364A832180A8BF00530BF8 /* Extensions */,
@@ -469,8 +469,10 @@
 				D2E9448C2179DE430050BEBC /* HomeTableViewCell.xib */,
 				D2364A5B217DB91C00530BF8 /* CommentTableViewCell.swift */,
 				D2364A5C217DB91C00530BF8 /* CommentTableViewCell.xib */,
+				D2364A882181B72000530BF8 /* ProfileHeaderCollectionReusableView.swift */,
+				D2364A8D2181EE3400530BF8 /* PhotoCollectionViewCell.swift */,
 			);
-			path = Views;
+			path = "Xib-Views";
 			sourceTree = "<group>";
 		};
 		D2E944912179F96D0050BEBC /* Model */ = {
@@ -708,10 +710,13 @@
 				D2364A73217F50C800530BF8 /* CommentView+Keyboard.swift in Sources */,
 				D2364A56217C7CA900530BF8 /* User.swift in Sources */,
 				D20F054B2174D8A600244F40 /* ActionSheet.swift in Sources */,
+				D2364A8B2181DB6B00530BF8 /* UserPostAPI.swift in Sources */,
 				D234F62D2178AEDE0040E8EC /* ShareViewController.swift in Sources */,
 				D2C8D4BA217745BE00EDD726 /* AuthServiceSign.swift in Sources */,
+				D2364A902181F47D00530BF8 /* ProfileView+CollectionViewDataSource.swift in Sources */,
 				D2364A71217F2AAB00530BF8 /* Comment+DictComment.swift in Sources */,
 				D2364A852180A8DF00530BF8 /* HomeTableViewCell+Likes.swift in Sources */,
+				D2364A872180B17400530BF8 /* PostLikesAPI.swift in Sources */,
 				D2364A6D217F1A6000530BF8 /* LoadPostCommentAPI.swift in Sources */,
 				D2364A8221808B4700530BF8 /* API.swift in Sources */,
 				D21974622174902000F77C3E /* SignUpViewController.swift in Sources */,
@@ -726,9 +731,11 @@
 				D2C8D4AE2175CD2000EDD726 /* AppStyle.swift in Sources */,
 				D2C8D4CF21777A1D00EDD726 /* UIColor+Assets.swift in Sources */,
 				D2E9448D2179DE440050BEBC /* HomeTableViewCell.swift in Sources */,
+				D2364A892181B72000530BF8 /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				D2C8D4B421761BC000EDD726 /* UIViewController.swift in Sources */,
 				D2F01C432179C5A8007A16A2 /* UITextView+Placeholder.swift in Sources */,
 				D21974322174826B00F77C3E /* AppDelegate.swift in Sources */,
+				D2364A922181F4AA00530BF8 /* ProfileView+CollecctionViewFlowLayout.swift in Sources */,
 				D21974752174AE1300F77C3E /* HomeViewController.swift in Sources */,
 				D2364A5D217DB91C00530BF8 /* CommentTableViewCell.swift in Sources */,
 				D2E94495217A03F50050BEBC /* Post+DictPost.swift in Sources */,
@@ -738,6 +745,7 @@
 				D234F61F217783110040E8EC /* CameraView+CameraPicker.swift in Sources */,
 				D219747B2174AE4B00F77C3E /* ActivityViewController.swift in Sources */,
 				D2364A58217C7D1500530BF8 /* User+DictUser.swift in Sources */,
+				D2364A8E2181EE3400530BF8 /* PhotoCollectionViewCell.swift in Sources */,
 				D2364A6F217F21ED00530BF8 /* Comment.swift in Sources */,
 				D21974772174AE2B00F77C3E /* DiscoverViewController.swift in Sources */,
 				D2364A7A217F5A7B00530BF8 /* UIView+Tap.swift in Sources */,

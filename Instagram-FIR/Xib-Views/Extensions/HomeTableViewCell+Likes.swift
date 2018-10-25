@@ -13,7 +13,7 @@ extension HomeTableViewCell {
     
     func tapLike_TouchUp() {
         likesUIImage.addTapGestureRecognizer {
-            self.postRef = API.loadPostAPI.refPost.child(self.post!.id!)
+            self.postRef = API.LoadPost.refPost.child(self.post!.id!)
             self.incrementLikes(forRef: self.postRef)
         }
     }
@@ -39,18 +39,15 @@ extension HomeTableViewCell {
                 likes = post[PostLikes.likes] as? [String : Bool] ?? [:]
                 var likesCount = post[PostLikes.likesCount] as? Int ?? 0
                 if let _ = likes[uid] {
-                    // Unlikes the post and remove self from likes
                     likesCount -= 1
                     likes.removeValue(forKey: uid)
                 } else {
-                    // likes the post and add self to likes
                     likesCount += 1
                     likes[uid] = true
                 }
                 post[PostLikes.likesCount] = likesCount as AnyObject?
                 post[PostLikes.likes] = likes as AnyObject?
                 
-                // Set value and report transaction success
                 currentData.value = post
                 
                 return TransactionResult.success(withValue: currentData)

@@ -45,14 +45,14 @@ class CommentViewController: UIViewController {
     }
     
     func fetchUser(uid: String, completion: (() -> Void)? = nil){
-        API.loadUserAPI.loadUsers(uid: uid) { (user) in
+        API.User.observeUser(uid: uid) { (user) in
             self.users.append(user)
             completion!()
         }
     }
 
     func loadComments() {
-        API.loadPostCommentAPI.loadComment(postId: postId) { (comment) in
+        API.LoadPostComment.observeComment(postId: postId) { (comment) in
             self.fetchUser(uid: comment.uid!, completion: {
                 self.comments.append(comment)
                 self.tableView.reloadData()

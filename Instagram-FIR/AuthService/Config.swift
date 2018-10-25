@@ -17,6 +17,7 @@ struct AuthConfig {
     static var commentUrl = "comments"
     static var postCommentUrl = "post-comment"
     static var likesUrl = "likes"
+    static var myPostsUrl = "myPosts"
 }
 
 struct FIRStrings{
@@ -49,6 +50,8 @@ struct Identifier {
     static var SignUpIdentifier = "SignUp"
     static var SignInIdentifier = "SignIn"
     static var CommentIdentifier = "CommentTableViewCell"
+    static var PhotoCellIdentifier = "PhotoCollectionViewCell"
+    static var ProfileHeaderCollectionIdentifier = "ProfileHeaderCollectionReusableView"
 }
 
 struct NibName {

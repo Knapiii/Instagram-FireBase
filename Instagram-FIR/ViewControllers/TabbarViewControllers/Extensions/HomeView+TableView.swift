@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Firebase
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -25,11 +24,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.homeViewController = self
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath as IndexPath, animated: false)
-    }
-    
+        
     func registerTableView() {
         tableView.delegate = self
         tableView.dataSource = self

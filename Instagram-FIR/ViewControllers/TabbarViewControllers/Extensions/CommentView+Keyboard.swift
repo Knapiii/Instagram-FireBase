@@ -18,9 +18,9 @@ extension CommentViewController {
     }
     
     func sendNewComment() {
-        API.uploadPostCommentAPI.sendCommentDataToDatabase(comment: commentTextField.text!, uploaded: {
+        API.UploadPostComment.sendCommentDataToDatabase(comment: commentTextField.text!, uploaded: {
             commentId in
-            API.uploadPostCommentAPI.uploadPostComment(newCommentId: commentId!, postId: self.postId, uploaded: {
+            API.UploadPostComment.uploadPostComment(newCommentId: commentId!, postId: self.postId, uploaded: {
                 self.emptyText()
             }, onError: { error in
                 ProgressHUD.showError(error)
@@ -46,7 +46,7 @@ extension CommentViewController {
     }
     
     func setUserProfilePicture() {
-        API.loadUserAPI.loadCurrentUser { (user) in
+        API.User.observeCurrentUser { (user) in
             let user = user
             if let photoUrlString = user.profileImageUrl{
                 let photoUrl = URL(string: photoUrlString)
