@@ -35,19 +35,19 @@ class SignUpViewController: UIViewController {
     
     func labelsNotEmpty() -> Bool {
         if (userNameText.text?.isEmpty)! {
-            Alert.actionSheet(title: nil, msg: "Fill in user name")
+            ProgressHUD.showError("Fill in user name")
             return false
         } else if (emailText.text?.isEmpty)! {
-            Alert.actionSheet(title: nil, msg: "Fill in email")
+            ProgressHUD.showError("Fill in email")
             return false
         } else if (passwordText.text?.isEmpty)!{
-            Alert.actionSheet(title: nil, msg: "Fill in password")
+            ProgressHUD.showError("Fill in password")
             return false
         } else if isPicturePicked == false {
-            Alert.actionSheet(title: nil, msg: "Take a profile picture")
+            ProgressHUD.showError("Take a profile picture")
             return false
         } else if samePassword == false {
-            Alert.actionSheet(title: nil, msg: "Not the same password")
+            ProgressHUD.showError("Not the same password")
             return Bool()
         } else {
             return true
@@ -108,7 +108,7 @@ class SignUpViewController: UIViewController {
                     ProgressHUD.showSuccess("User created")
                     self.performSegue(withIdentifier: Identifier.SignUpIdentifier, sender: nil)
                 }) { (error) in
-                    Alert.actionSheet(title: nil, msg: "\(error!)")
+                    ProgressHUD.showError(error!)
                 }
             }
         }

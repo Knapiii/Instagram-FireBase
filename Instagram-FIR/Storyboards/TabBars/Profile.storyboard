@@ -59,7 +59,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileHeaderCollectionReusableView" id="cPC-Fv-afc" customClass="ProfileHeaderCollectionReusableView" customModule="Instagram_FIR" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderProfileCollectionReusableView" id="cPC-Fv-afc" customClass="HeaderProfileCollectionReusableView" customModule="Instagram_FIR" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -224,11 +224,11 @@
                                         <constraint firstItem="C5w-gJ-A94" firstAttribute="top" secondItem="cPC-Fv-afc" secondAttribute="top" constant="16" id="vQB-OU-WOG"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="amountOfFollowersLabel" destination="fJX-2C-RY6" id="wJH-Pm-RQI"/>
-                                        <outlet property="amountOfFollowingLabel" destination="jkb-an-Y76" id="jUs-tI-GoZ"/>
-                                        <outlet property="amountOfPostsLabel" destination="zZ5-lg-Ko0" id="StA-O5-92i"/>
-                                        <outlet property="userProfileName" destination="dHf-fW-jw2" id="OH1-LC-iR8"/>
-                                        <outlet property="userProfilePicture" destination="WZj-2N-4Rh" id="nuc-VL-6h8"/>
+                                        <outlet property="followersCountLabel" destination="fJX-2C-RY6" id="gho-5k-sYv"/>
+                                        <outlet property="followingCountLabel" destination="jkb-an-Y76" id="z7r-xq-DDK"/>
+                                        <outlet property="myPostsCountLabel" destination="zZ5-lg-Ko0" id="hTa-Zd-GVN"/>
+                                        <outlet property="nameLabel" destination="dHf-fW-jw2" id="amh-tc-b0d"/>
+                                        <outlet property="profileImage" destination="WZj-2N-4Rh" id="kbo-kh-ZP8"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>

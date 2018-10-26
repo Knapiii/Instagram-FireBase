@@ -16,7 +16,7 @@ class AuthServiceSign {
       do {
          try Auth.auth().signOut()
       } catch let logoutError {
-         Alert.actionSheet(title: nil, msg: (logoutError as! String))
+         ProgressHUD.showError(logoutError.localizedDescription)
       }
       print("Signed out")
       let storyboard = UIStoryboard(name: "SignIn", bundle: nil)

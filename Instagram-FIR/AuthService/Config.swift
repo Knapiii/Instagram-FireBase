@@ -51,7 +51,7 @@ struct Identifier {
     static var SignInIdentifier = "SignIn"
     static var CommentIdentifier = "CommentTableViewCell"
     static var PhotoCellIdentifier = "PhotoCollectionViewCell"
-    static var ProfileHeaderCollectionIdentifier = "ProfileHeaderCollectionReusableView"
+    static var ProfileHeaderCollectionIdentifier = "HeaderProfileCollectionReusableView"
 }
 
 struct NibName {

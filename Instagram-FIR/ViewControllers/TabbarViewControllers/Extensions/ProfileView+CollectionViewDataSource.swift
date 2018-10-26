@@ -23,10 +23,10 @@ extension ProfileViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerViewCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Identifier.ProfileHeaderCollectionIdentifier, for: indexPath) as! ProfileHeaderCollectionReusableView
+        let headerViewCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Identifier.ProfileHeaderCollectionIdentifier, for: indexPath) as! HeaderProfileCollectionReusableView
         if let user = self.user {
             headerViewCell.user = user
-            headerViewCell.amountOfPostsLabel.text = "\(posts.count)"
+            headerViewCell.myPostsCountLabel.text = "\(posts.count)"
         }
         return headerViewCell
     }

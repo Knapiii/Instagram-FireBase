@@ -45,7 +45,7 @@ class SignInViewController: UIViewController {
             ProgressHUD.showSuccess("Logged in")
             self.performSegue(withIdentifier: Identifier.SignInIdentifier, sender: nil)
         }) { error in
-            Alert.actionSheet(title: nil, msg: "\(error!)")
+            ProgressHUD.showError(error)
         }
     }
 }

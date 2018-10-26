@@ -29,7 +29,7 @@ class LoadPostAPI {
     
     func inrementLikes(forRef ref: DatabaseReference, completion: ((Post?) -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
         ref.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
-            if var post = currentData.value as? [String : AnyObject], let uid = Auth.auth().currentUser?.uid {
+            if var post = currentData.value as? [String : AnyObject], let uid = Auth.auth().currentUser?.uid{
                 var likes: Dictionary<String, Bool>
                 likes = post[PostLikes.likes] as? [String : Bool] ?? [:]
                 var likesCount = post[PostLikes.likesCount] as? Int ?? 0
