@@ -13,11 +13,9 @@ class ActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        API.User.observeCurrentUser { (user) in
+        API.user.observeCurrentUser { (user) in
             print("Current User: \(user.username!)")
         }
     }
-    
-
 
 }

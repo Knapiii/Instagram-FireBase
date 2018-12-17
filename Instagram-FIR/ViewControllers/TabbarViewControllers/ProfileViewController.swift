@@ -9,11 +9,13 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    
+
+    @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
+
     var user: User!
     var posts: [Post] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
@@ -21,25 +23,26 @@ class ProfileViewController: UIViewController {
         fetchUser()
         fetchMyPosts()
     }
-    
+
     func fetchUser() {
-        API.User.observeCurrentUser { (user) in
+        API.user.observeCurrentUser { (user) in
             self.user = user
+            self.navigationBar.title = self.user.username
             self.collectionView.reloadData()
         }
     }
-    
+
     func fetchMyPosts() {
         API.MyPost.loadMyPosts { snapshot in
-            API.LoadPost.observePost(withId: snapshot.key, completion: { post in
+            API.loadPost.observePostWithId(withId: snapshot.key, completion: { post in
                 self.posts.append(post)
                 self.collectionView.reloadData()
             })
         }
     }
-    
+
     @IBAction func signOut(_ sender: Any) {
         AuthServiceSign.signOut(currentVC: self)
     }
-    
+
 }

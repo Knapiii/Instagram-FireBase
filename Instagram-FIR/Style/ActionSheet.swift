@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-class Alert{
-    
-    static func actionSheet(title: String?, msg: String?){
+class Alert {
+
+    static func actionSheet(title: String?, msg: String?) {
         let actionSheet = UIAlertController(title: title ?? nil, message: msg ?? nil, preferredStyle: .actionSheet)
         let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         actionSheet.addAction(cancel)
         UIApplication.topViewController()?.present(actionSheet, animated: true, completion: nil)
-        
+
     }
-    
-    static func actionAlert(title: String?, msg: String?){
+
+    static func actionAlert(title: String?, msg: String?) {
         let alert = UIAlertController(title: title ?? nil, message: msg ?? nil,
             preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)

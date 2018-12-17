@@ -13,7 +13,7 @@ import Firebase
 private var alert = Alert()
 
 extension UIViewController {
-    
+
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -22,7 +22,7 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    
+
     func setBackgroundImage(_ imageName: String, contentMode: UIView.ContentMode) {
         let backgroundImage = UIImageView(frame: self.view.bounds)
         backgroundImage.image = UIImage(named: imageName)

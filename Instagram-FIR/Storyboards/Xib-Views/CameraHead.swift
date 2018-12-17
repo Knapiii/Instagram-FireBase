@@ -11,21 +11,21 @@ import UIKit
 
 @IBDesignable
 class CameraHead: UIView {
-    
+
     @IBOutlet var cameraHead: UIView!
     @IBOutlet weak var placeHolderImage: UIImageView!
     @IBOutlet weak var caption: UITextView!
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commitInit()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commitInit()
     }
-    
+
     private func commitInit() {
         let bundle = Bundle(for: CameraHead.self)
         bundle.loadNibNamed(NibName.CameraHead, owner: self, options: nil)
@@ -34,6 +34,5 @@ class CameraHead: UIView {
         cameraHead.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         caption.placeholder = "Write an awesome caption"
     }
-    
 
 }

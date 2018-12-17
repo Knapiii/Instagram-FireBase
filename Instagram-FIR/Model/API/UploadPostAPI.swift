@@ -11,10 +11,10 @@ import UIKit
 import Firebase
 
 class UploadPostAPI {
-    
+
     var postRef = Database.database().reference(fromURL: AuthConfig.FIRUrl).child(AuthConfig.postUrl)
     var storageRef = Storage.storage().reference(forURL: AuthConfig.StorageUrl).child(AuthConfig.postUrl)
-    
+
     func uploadPhoto(caption: String, imageData: Data, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
         let photoString = UUID().uuidString
         storageRef.child(photoString)
@@ -24,7 +24,7 @@ class UploadPostAPI {
                 return
             }
             let photoUrl = metadata?.downloadURL()?.absoluteString
-            
+
             self.sendPostDataToDatabase(photoUrl: photoUrl!, caption: caption, uploaded: {
                 uploaded!()
             }, onError: { error in
@@ -35,20 +35,19 @@ class UploadPostAPI {
             })
         }
     }
-    
+
     func sendPostDataToDatabase(photoUrl: String, caption: String, uploaded: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
         guard let currentUser = Auth.auth().currentUser else { return }
         let newPostId = postRef.childByAutoId().key
         let newPostReference = postRef.child(newPostId)
         let currentUserId = currentUser.uid
-        newPostReference.setValue([FIRStrings.uid: currentUserId, FIRStrings.photoUrl: photoUrl, FIRStrings.caption: caption], withCompletionBlock: {
-            (error, ref) in
+        newPostReference.setValue([FIRStrings.uid: currentUserId, FIRStrings.photoUrl: photoUrl, FIRStrings.caption: caption], withCompletionBlock: { (error, _) in
             if error != nil {
                 onError!(error!.localizedDescription)
                 return
             }
             let myPostRef = API.MyPost.refMyPosts.child(currentUser.uid).child(newPostId)
-            myPostRef.setValue(true, withCompletionBlock: { (error, ref) in
+            myPostRef.setValue(true, withCompletionBlock: { (error, _) in
                 if error != nil {
                     onError!(error!.localizedDescription)
                     return

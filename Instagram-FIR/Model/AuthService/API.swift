@@ -9,8 +9,8 @@
 import Foundation
 
 class API {
-    static var User = LoadUserAPI()
-    static var LoadPost = LoadPostAPI()
+    static var user = LoadUserAPI()
+    static var loadPost = LoadPostAPI()
     static var UploadPost = UploadPostAPI()
     static var LoadPostComment = LoadPostCommentAPI()
     static var UploadPostComment = UploadPostCommentAPI()

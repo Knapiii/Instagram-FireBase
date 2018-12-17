@@ -15,13 +15,13 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var commentButtonConstraint: NSLayoutConstraint!
-    
+
     var postId: String!
     var comments = [Comment]()
     var users = [User]()
-    
+
     var loadPostAPI = LoadPostAPI()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
@@ -29,23 +29,23 @@ class CommentViewController: UIViewController {
         writeCommentInit()
         title = Titles.Comment
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
     }
-    
+
     @IBAction func sendComment_TouchUp(_ sender: Any) {
         sendNewComment()
     }
-    
-    func fetchUser(uid: String, completion: (() -> Void)? = nil){
-        API.User.observeUser(uid: uid) { (user) in
+
+    func fetchUser(uid: String, completion: (() -> Void)? = nil) {
+        API.user.observeUser(uid: uid) { (user) in
             self.users.append(user)
             completion!()
         }
@@ -61,4 +61,3 @@ class CommentViewController: UIViewController {
     }
 
 }
-

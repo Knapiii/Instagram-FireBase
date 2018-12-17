@@ -19,12 +19,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var profileUIImage: UIImageView!
     @IBOutlet weak var checkBox1: UIImageView!
     @IBOutlet weak var checkBox2: UIImageView!
-    
+
     var selectImageFromPicker: UIImage?
     var isPicturePicked = false
     var samePassword = false
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setBackgroundImage(ImageName.signInBackground, contentMode: .scaleAspectFill)
@@ -32,32 +31,11 @@ class SignUpViewController: UIViewController {
         signUpButton.alpha = 0.5
         self.hideKeyboardWhenTappedAround()
     }
-    
-    func labelsNotEmpty() -> Bool {
-        if (userNameText.text?.isEmpty)! {
-            ProgressHUD.showError("Fill in user name")
-            return false
-        } else if (emailText.text?.isEmpty)! {
-            ProgressHUD.showError("Fill in email")
-            return false
-        } else if (passwordText.text?.isEmpty)!{
-            ProgressHUD.showError("Fill in password")
-            return false
-        } else if isPicturePicked == false {
-            ProgressHUD.showError("Take a profile picture")
-            return false
-        } else if samePassword == false {
-            ProgressHUD.showError("Not the same password")
-            return Bool()
-        } else {
-            return true
-        }
-     }
-    
+
     @IBAction func SignUpAlpha(_ sender: UITextField) {
         if (userNameText.text?.isEmpty)! || (emailText.text?.isEmpty)! ||
             (passwordText.text?.isEmpty)! || (passwordRepeatText.text?.isEmpty)!
-            || samePassword == false {
+            || samePassword == false || profileUIImage == nil {
             signUpButton.alpha = 0.5
         } else {
             signUpButton.alpha = 1.0
@@ -66,14 +44,14 @@ class SignUpViewController: UIViewController {
 
     @IBAction func checkPassword(_ sender: UITextField) {
         if sender == passwordText {
-            if passwordText.count > 5{
+            if passwordText.count > 5 {
                 checkBox1.image = #imageLiteral(resourceName: "box-green")
             } else {
                 checkBox1.image = #imageLiteral(resourceName: "box-red")
             }
         } else if sender == passwordRepeatText {
             if passwordRepeatText.count > 5 {
-                if passwordText.text == passwordRepeatText.text{
+                if passwordText.text == passwordRepeatText.text {
                     samePassword = true
                     checkBox1.image = #imageLiteral(resourceName: "box-green")
                     checkBox2.image = #imageLiteral(resourceName: "box-green")
@@ -84,13 +62,13 @@ class SignUpViewController: UIViewController {
             }
         }
     }
-    
+
     @IBAction func dissmiss_onClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+
     func checkSignUp() {
-        if labelsNotEmpty() == true && samePassword == true{
+        if labelsNotEmpty() == true && samePassword == true {
             createUser()
         }
     }
@@ -98,12 +76,12 @@ class SignUpViewController: UIViewController {
     @IBAction func SignUp(_ sender: UIButton) {
         checkSignUp()
     }
-    
-    func createUser(){
+
+    func createUser() {
         view.endEditing(true)
         ProgressHUD.show("Waiting...")
-        if let profileImg = self.selectImageFromPicker{
-            if let imageData = profileImg.jpegData(compressionQuality: 0.1){
+        if let profileImg = self.selectImageFromPicker {
+            if let imageData = profileImg.jpegData(compressionQuality: 0.1) {
                 AuthServiceSign.signUp(username: self.userNameText.text!, email: self.emailText.text!, password: self.passwordText.text!, imageData: imageData, signedIn: {
                     ProgressHUD.showSuccess("User created")
                     self.performSegue(withIdentifier: Identifier.SignUpIdentifier, sender: nil)

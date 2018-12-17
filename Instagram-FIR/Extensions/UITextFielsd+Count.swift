@@ -10,11 +10,8 @@ import Foundation
 import UIKit
 
 extension UITextField {
-    
-    var count:Int {
-        get{
-            return self.text?.count ?? 0
-        }
-        
+
+    var count: Int {
+        return self.text?.count ?? 0
     }
 }

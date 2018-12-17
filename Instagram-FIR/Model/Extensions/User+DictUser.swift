@@ -9,9 +9,9 @@
 import Foundation
 
 extension User {
-    static func transformUserDict(dict: [String: Any]) -> User{
+    static func transformUserToDict(dict: [String: Any]) -> User {
         let user = User()
-        
+
         user.username = dict[FIRStrings.username] as? String
         user.email = dict[FIRStrings.email] as? String
         user.profileImageUrl = dict[FIRStrings.profileImageUrl] as? String

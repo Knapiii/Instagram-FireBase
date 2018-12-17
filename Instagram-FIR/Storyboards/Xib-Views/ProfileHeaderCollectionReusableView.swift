@@ -7,24 +7,23 @@
 //
 
 import UIKit
-class HeaderProfileCollectionReusableView: UICollectionReusableView {
-    
+class ProfileHeaderCollectionReusableView: UICollectionReusableView {
+
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var myPostsCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
     @IBOutlet weak var followersCountLabel: UILabel!
-    
+
     var user: User? {
         didSet {
             updateView()
         }
     }
-    func updateView() {        
+
+    func updateView() {
         self.nameLabel.text = user!.username
-        if let photoUrlString = user!.profileImageUrl {
-            let photoUrl = URL(string: photoUrlString)
-            self.profileImage.sd_setImage(with: photoUrl)
+        SdSetImage.fetchUserImage(image: profileImage, user: user!) { _ in
             AppStyle.roundedCornersImageView(image: self.profileImage)
         }
     }

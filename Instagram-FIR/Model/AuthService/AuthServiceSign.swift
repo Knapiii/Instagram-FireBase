@@ -11,30 +11,28 @@ import UIKit
 import Firebase
 
 class AuthServiceSign {
-   
+
    static func signOut(currentVC: UIViewController) {
       do {
          try Auth.auth().signOut()
       } catch let logoutError {
          ProgressHUD.showError(logoutError.localizedDescription)
       }
-      print("Signed out")
       let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
       let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
       currentVC.present(signInVC, animated: true, completion: nil)
    }
-   
+
    static func signIn(email: String, password: String, signedIn: (() -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
-      Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+      Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
          if let error = error {
             onError!(error.localizedDescription)
             return
          }
-         print("Signed In")
          signedIn!()
       }
    }
-   
+
    static func autoSignIn(signedIn: (() -> Void)? = nil) {
       if Auth.auth().currentUser != nil {
          signedIn!()
@@ -48,7 +46,7 @@ class AuthServiceSign {
          }
          let uid = user?.uid
          let storageRef = Storage.storage().reference(forURL: AuthConfig.StorageUrl).child(AuthConfig.profilePictureUrl).child(uid!)
-         
+
          storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
             if error != nil {
                return
@@ -58,7 +56,7 @@ class AuthServiceSign {
          })
       })
    }
-   
+
    static func setUserInfomation(profileImageUrl: String, username: String, email: String, uid: String, signedIn: (() -> Void)? = nil) {
       let ref = Database.database().reference()
       let usersReference = ref.child(AuthConfig.userUrl)
@@ -66,7 +64,5 @@ class AuthServiceSign {
       newUserReference.setValue([FIRStrings.username: username, FIRStrings.email: email, FIRStrings.profileImageUrl: profileImageUrl])
       signedIn!()
    }
-   
+
 }
-
-

@@ -8,35 +8,33 @@
 
 import UIKit
 
+@IBDesignable
 class CommentTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var userProfilePicture: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
-    
+
     var comments: Comment? {
         didSet {
             fetchCommentInformation()
         }
     }
-    
+
     var user: User? {
         didSet {
             fetchUserInformation()
         }
     }
-    
+
     func fetchCommentInformation() {
         commentLabel.text = comments?.commentText
     }
-    
+
     func fetchUserInformation() {
         userNameLabel.text = user?.username
-        if let photoUrlString = user!.profileImageUrl{
-            let photoUrl = URL(string: photoUrlString)
-            userProfilePicture.sd_setImage(with: photoUrl)
-        }
+        SdSetImage.fetchUserImage(image: userProfilePicture, user: user!, photo: nil)
+
     }
 
     override func awakeFromNib() {

@@ -9,22 +9,21 @@
 import Foundation
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NibName.HomeTableCell, for: indexPath) as! HomeTableViewCell
         let post = posts[indexPath.row]
         let user = users[indexPath.row]
-        cell.caption!.text = post.caption
         cell.post = post
         cell.user = user
         cell.homeViewController = self
         return cell
     }
-        
+
     func registerTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -34,6 +33,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.tableFooterView = UIView()
         tableView.allowsSelectionDuringEditing = true
     }
-    
-    
+
 }

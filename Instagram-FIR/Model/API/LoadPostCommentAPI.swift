@@ -10,14 +10,15 @@ import Foundation
 import UIKit
 import Firebase
 
-class LoadCommentAPI {
-    
-    static func loadComment(postId: String, loaded: @escaping (Comment) -> Void) {
-        
-        let ref = Database.database().reference()
-        let postCommentRef = ref.child(AuthConfig.postCommentUrl).child(postId)
-        postCommentRef.observe(.childAdded) { snapshot in
-            let newRef = ref.child(AuthConfig.commentUrl).child(snapshot.key)
+class LoadPostCommentAPI {
+
+    var commentRef = Database.database().reference().child(AuthConfig.commentUrl)
+    var postCommentRef = Database.database().reference().child(AuthConfig.postCommentUrl)
+
+    func observeComment(postId: String, loaded: @escaping (Comment) -> Void) {
+        let postCommentRefId = postCommentRef.child(postId)
+        postCommentRefId.observe(.childAdded) { snapshot in
+            let newRef = self.commentRef.child(snapshot.key)
             newRef.observe(.value, with: { snapshotComment in
                 let value = snapshotComment.value
                 if let dict = value as? [String: Any] {
@@ -28,5 +29,4 @@ class LoadCommentAPI {
         }
     }
 
-    
 }

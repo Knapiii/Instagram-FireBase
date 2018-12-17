@@ -10,8 +10,8 @@ import Foundation
 import Firebase
 
 extension Post {
-    
-    static func transformPostPhotoDict(dict: [String: Any], key: String) -> Post{
+
+    static func transformPostToDict(dict: [String: Any], key: String) -> Post {
         let post = Post()
         post.id = key
         post.caption = dict[FIRStrings.caption] as? String
@@ -26,10 +26,10 @@ extension Post {
         }
         return post
     }
-    
-    static func transformPostVideoDic(dict: [String: Any]) -> Post{
+
+    static func transformPostVideoDic(dict: [String: Any]) -> Post {
         let post = Post()
-        
+
         post.caption = dict[FIRStrings.caption] as? String
         post.videoUrl = dict[FIRStrings.videoUrl] as? String
         post.uid = dict[FIRStrings.uid] as? String
@@ -42,5 +42,5 @@ extension Post {
         }
         return post
     }
-    
+
 }

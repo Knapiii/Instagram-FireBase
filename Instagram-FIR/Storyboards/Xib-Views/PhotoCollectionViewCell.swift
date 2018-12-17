@@ -9,21 +9,16 @@
 import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var photo: UIImageView!
-    
+
     var post: Post? {
         didSet {
             fetchPostInformation()
         }
     }
-    
+
     func fetchPostInformation() {
-        if let photoUrlString = post?.photoUrl {
-            let photoUrl = URL(string: photoUrlString)
-            photo.sd_setImage(with: photoUrl)
-        }
+        SdSetImage.fetchPostImage(image: photo, post: post!)
     }
-    
-    
 }

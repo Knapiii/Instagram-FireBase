@@ -12,4 +12,3 @@ class Comment {
     var commentText: String?
     var uid: String?
 }
-

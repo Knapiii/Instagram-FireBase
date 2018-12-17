@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="UsersTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="UsersTableViewCell" rowHeight="55" id="J8N-EQ-zqP" customClass="UsersTableViewCell" customModule="Instagram_FIR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J8N-EQ-zqP" id="GOs-T4-UEQ">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cf0-GM-laU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="zH9-KS-aNP">
+                                <rect key="frame" x="12" y="12" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="B8m-eW-SD5"/>
+                                    <constraint firstAttribute="width" constant="40" id="HZh-o4-abi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al2-II-K6R">
+                                <rect key="frame" x="64" y="24" width="67" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YN-Wl-U6i">
+                                <rect key="frame" x="263" y="17" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.14924312814600524" green="0.83815831218274117" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Hgi-eM-Mkc"/>
+                                    <constraint firstAttribute="height" constant="30" id="pOi-Mp-Rux"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Following">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5YN-Wl-U6i" secondAttribute="trailing" constant="12" id="7Ef-bN-U9q"/>
+                            <constraint firstItem="5YN-Wl-U6i" firstAttribute="centerY" secondItem="Cf0-GM-laU" secondAttribute="centerY" id="Etq-X2-KQE"/>
+                            <constraint firstItem="zH9-KS-aNP" firstAttribute="leading" secondItem="Cf0-GM-laU" secondAttribute="leading" constant="12" id="TXy-bA-gFY"/>
+                            <constraint firstAttribute="bottom" secondItem="zH9-KS-aNP" secondAttribute="bottom" constant="12" id="cjT-B4-95g"/>
+                            <constraint firstItem="al2-II-K6R" firstAttribute="leading" secondItem="zH9-KS-aNP" secondAttribute="trailing" constant="12" id="fcp-ix-wAj"/>
+                            <constraint firstItem="al2-II-K6R" firstAttribute="centerY" secondItem="zH9-KS-aNP" secondAttribute="centerY" id="gnp-BB-zTX"/>
+                            <constraint firstItem="zH9-KS-aNP" firstAttribute="top" secondItem="Cf0-GM-laU" secondAttribute="top" constant="12" id="jEa-xV-HXZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Cf0-GM-laU" firstAttribute="top" secondItem="GOs-T4-UEQ" secondAttribute="top" id="3Yt-b6-HtA"/>
+                    <constraint firstAttribute="bottom" secondItem="Cf0-GM-laU" secondAttribute="bottom" constant="-0.5" id="I1M-Kj-Z21"/>
+                    <constraint firstItem="Cf0-GM-laU" firstAttribute="leading" secondItem="GOs-T4-UEQ" secondAttribute="leading" id="Tvm-tf-IDx"/>
+                    <constraint firstAttribute="trailing" secondItem="Cf0-GM-laU" secondAttribute="trailing" id="qSY-cH-h2X"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="Wnn-hI-D5x"/>
+            <connections>
+                <outlet property="followButton" destination="5YN-Wl-U6i" id="fFI-7p-BEZ"/>
+                <outlet property="userName" destination="al2-II-K6R" id="f8h-Q0-37m"/>
+                <outlet property="userProfilePicture" destination="zH9-KS-aNP" id="Q3x-b3-6uc"/>
+            </connections>
+            <point key="canvasLocation" x="72.799999999999997" y="87.256371814092958"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeholderProfileImage" width="225" height="225"/>
+    </resources>
+</document>

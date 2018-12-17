@@ -15,7 +15,7 @@ class AppStyle {
     static let signInButtonColor = UIColor.signInButtonColor
     static let buttonEnabled = UIColor.buttonEnabled
     static let buttonDisabled = UIColor.buttonDisabled
-    
+
     static func roundedCornersImageView(image: UIImageView) {
         image.layer.cornerRadius = image.frame.size.width/2
         image.clipsToBounds = true

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z8b-NJ-Bwq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,7 +60,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderProfileCollectionReusableView" id="cPC-Fv-afc" customClass="HeaderProfileCollectionReusableView" customModule="Instagram_FIR" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderProfileCollectionReusableView" id="cPC-Fv-afc" customClass="ProfileHeaderCollectionReusableView" customModule="Instagram_FIR" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -245,22 +246,71 @@
                     <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile_Selected" id="iES-0J-Kzr">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Profile" id="Xbl-tZ-li7">
-                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="n4f-yp-loY">
+                    <navigationItem key="navigationItem" id="Xbl-tZ-li7">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="discover" id="GZ6-Pt-E3a">
+                            <connections>
+                                <segue destination="jcV-J2-fPj" kind="show" id="yIx-N1-YJ1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="n4f-yp-loY">
                             <connections>
                                 <action selector="signOut:" destination="yIB-J3-dbw" id="bV6-RS-YOI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="9LO-iV-Idl"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="GEz-eG-2Gi" id="4TV-A3-HbW"/>
+                        <outlet property="navigationBar" destination="Xbl-tZ-li7" id="bDM-rK-S5b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1H-zR-Tqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2048.8000000000002" y="142.57871064467767"/>
+        </scene>
+        <!--Users View Controller-->
+        <scene sceneID="adw-gx-9Zx">
+            <objects>
+                <viewController storyboardIdentifier="UsersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jcV-J2-fPj" customClass="UsersViewController" customModule="Instagram_FIR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cs6-9u-Zet">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BVy-yJ-SYT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UsersTableViewCell" rowHeight="55" id="VSV-N5-jbc" customClass="UsersTableViewCell" customModule="Instagram_FIR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VSV-N5-jbc" id="Kdp-mZ-3PE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jcV-J2-fPj" id="oIl-TK-kH9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BVy-yJ-SYT" firstAttribute="top" secondItem="cs6-9u-Zet" secondAttribute="top" id="3XN-bS-K59"/>
+                            <constraint firstItem="BVy-yJ-SYT" firstAttribute="trailing" secondItem="Hf8-Di-IFp" secondAttribute="trailing" id="ORw-uq-frJ"/>
+                            <constraint firstItem="BVy-yJ-SYT" firstAttribute="leading" secondItem="Hf8-Di-IFp" secondAttribute="leading" id="drP-Ip-LQl"/>
+                            <constraint firstAttribute="bottom" secondItem="BVy-yJ-SYT" secondAttribute="bottom" id="e3v-cd-aml"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hf8-Di-IFp"/>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="BVy-yJ-SYT" id="dNu-1H-VJ3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YBB-T9-MGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2828" y="142.57871064467767"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T2L-yY-7fZ">
@@ -273,6 +323,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q51-Bv-dPy">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="ButtonBackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -287,6 +338,10 @@
     <resources>
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
+        <image name="discover" width="22" height="22"/>
         <image name="placeholderProfileImage" width="225" height="225"/>
+        <namedColor name="ButtonBackgroundColor">
+            <color red="0.0" green="0.58431372549019611" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
