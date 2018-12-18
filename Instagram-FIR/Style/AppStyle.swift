@@ -20,4 +20,23 @@ class AppStyle {
         image.layer.cornerRadius = image.frame.size.width/2
         image.clipsToBounds = true
     }
+
+    static func unFollowUser(button: UIButton){
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 226/255, green: 228/255, blue: 232/255, alpha: 1).cgColor
+        button.layer.cornerRadius = 5
+        button.clipsToBounds = true
+        button.backgroundColor = UIColor(red: 38/255, green: 214/255, blue: 0/255, alpha: 0.8)
+        button.setTitleColor(UIColor.white, for: .normal)
+        //38  214  0
+    }
+
+    static func followUser(button: UIButton){
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 226/255, green: 228/255, blue: 232/255, alpha: 1).cgColor
+        button.layer.cornerRadius = 5
+        button.clipsToBounds = true
+        button.backgroundColor = UIColor(red: 69/255, green: 142/255, blue: 255/255, alpha: 1)
+        button.setTitleColor(UIColor.white, for: .normal)
+    }
 }

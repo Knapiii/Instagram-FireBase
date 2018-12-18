@@ -13,4 +13,5 @@ class UserModel {
     var email: String?
     var profileImageUrl: String?
     var id: String?
+    var isFollowing: Bool?
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Post {
+class PostModel {
     var caption: String?
     var photoUrl: String?
     var videoUrl: String?

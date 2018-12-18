@@ -1,34 +1,15 @@
 //
-//  UsersViewController.swift
+//  SearchDiscover+TableView.swift
 //  Instagram-FIR
 //
-//  Created by Kristoffer Knape on 2018-10-26.
+//  Created by Kristoffer Knape on 2018-12-18.
 //  Copyright © 2018 Kristoffer Knape. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class UsersViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-
-    var users: [User] = []
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fetchUsers()
-        registerTableView()
-    }
-
-    func fetchUsers() {
-        API.user.observeAllUsers { user in
-            self.users.append(user)
-            self.tableView.reloadData()
-        }
-    }
-}
-
-extension UsersViewController: UITableViewDataSource {
+extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }

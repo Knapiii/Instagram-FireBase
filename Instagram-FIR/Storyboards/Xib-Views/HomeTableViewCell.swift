@@ -24,13 +24,13 @@ class HomeTableViewCell: UITableViewCell {
     var homeViewController: HomeViewController?
     var postRef: DatabaseReference!
 
-    var post: Post? {
+    var post: PostModel? {
         didSet {
             fetchPostInformation()
         }
     }
 
-    var user: User? {
+    var user: UserModel? {
         didSet {
             fetchUserInformation()
         }
@@ -42,19 +42,7 @@ class HomeTableViewCell: UITableViewCell {
             let photoUrl = URL(string: photoUrlString)
             postImage.sd_setImage(with: photoUrl)
         }
-        API.PostLikes.observeLikes(postId: post!.id!) { (post) in
-            self.updateLike(post: post)
-        }
-
-        API.loadPost.observePostWithId(withId: post!.id!) { post in
-            self.updateLike(post: post)
-        }
-
-        API.PostLikes.observeLikeCount(postId: post!.id!) { (value) in
-            if value < 1{
-                self.amountOfLikesButton.setTitle("\(value) likes", for: .normal)
-            }
-        }
+        self.updateLike(post: self.post!)
     }
 
     func fetchUserInformation() {

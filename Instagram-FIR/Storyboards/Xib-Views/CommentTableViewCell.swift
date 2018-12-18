@@ -21,7 +21,7 @@ class CommentTableViewCell: UITableViewCell {
         }
     }
 
-    var user: User? {
+    var user: UserModel? {
         didSet {
             fetchUserInformation()
         }

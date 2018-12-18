@@ -10,7 +10,7 @@ import Foundation
 
 class SdSetImage {
 
-    static func fetchUserImage(image: UIImageView, user: User, photo: ((UIImageView) -> Void)? = nil) {
+    static func fetchUserImage(image: UIImageView, user: UserModel, photo: ((UIImageView) -> Void)? = nil) {
         if let photoUrlString = user.profileImageUrl {
             let photoUrl = URL(string: photoUrlString)
             image.sd_setImage(with: photoUrl)
@@ -18,7 +18,7 @@ class SdSetImage {
         }
     }
 
-    static func fetchPostImage(image: UIImageView, post: Post, photo: ((UIImageView) -> Void)? = nil) {
+    static func fetchPostImage(image: UIImageView, post: PostModel, photo: ((UIImageView) -> Void)? = nil) {
         if let photoUrlString = post.photoUrl {
             let photoUrl = URL(string: photoUrlString)
             image.sd_setImage(with: photoUrl)

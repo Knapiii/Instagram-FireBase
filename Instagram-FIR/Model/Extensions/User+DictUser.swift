@@ -8,13 +8,14 @@
 
 import Foundation
 
-extension User {
-    static func transformUserToDict(dict: [String: Any]) -> User {
-        let user = User()
+extension UserModel {
+    static func transformUserToDict(dict: [String: Any], key: String) -> UserModel {
+        let user = UserModel()
 
         user.username = dict[FIRStrings.username] as? String
         user.email = dict[FIRStrings.email] as? String
         user.profileImageUrl = dict[FIRStrings.profileImageUrl] as? String
+        user.id = key
         return user
     }
 }

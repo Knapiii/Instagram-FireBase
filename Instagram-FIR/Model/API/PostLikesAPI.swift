@@ -11,11 +11,11 @@ import Firebase
 
 class PostLikesAPI {
 
-    func observeLikes(postId: String, completion: ((Post) -> Void)? = nil) {
+    func observeLikes(postId: String, completion: ((PostModel) -> Void)? = nil) {
         API.loadPost.refPost.child(postId).observe(.value) { snapshot in
             if let dict = snapshot.value as? [String: Any] {
                 let key = snapshot.key
-                let post = Post.transformPostToDict(dict: dict, key: key)
+                let post = PostModel.transformPostToDict(dict: dict, key: key)
                 completion!(post)
             }
         }
@@ -29,10 +29,10 @@ class PostLikesAPI {
         }
     }
 
-    func inrementLikes(postId: String, completion: ((Post?) -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
+    func inrementLikes(postId: String, completion: ((PostModel?) -> Void)? = nil, onError: ((String?) -> Void)? = nil) {
         let postRef = API.loadPost.refPost.child(postId)
         postRef.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
-            if var post = currentData.value as? [String: AnyObject], let uid = Auth.auth().currentUser?.uid {
+            if var post = currentData.value as? [String: AnyObject], let uid = API.user.currentUser?.uid {
                 var likes: Dictionary<String, Bool>
                 likes = post[PostLikes.likes] as? [String: Bool] ?? [:]
                 var likesCount = post[PostLikes.likesCount] as? Int ?? 0
@@ -57,7 +57,7 @@ class PostLikesAPI {
             }
             if let dict = snapshot?.value as? [String: Any] {
                 let key = snapshot!.key
-                let post = Post.transformPostToDict(dict: dict, key: key)
+                let post = PostModel.transformPostToDict(dict: dict, key: key)
                 completion!(post)
             }
         }

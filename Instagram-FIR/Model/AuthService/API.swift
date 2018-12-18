@@ -16,4 +16,6 @@ class API {
     static var UploadPostComment = UploadPostCommentAPI()
     static var PostLikes = PostLikesAPI()
     static var MyPost = UserPostAPI()
+    static var Follow = FollowAPI()
+    static var Feed = FeedAPI()
 }

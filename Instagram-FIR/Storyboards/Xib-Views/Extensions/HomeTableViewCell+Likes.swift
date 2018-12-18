@@ -14,13 +14,17 @@ extension HomeTableViewCell {
         likesUIImage.addTapGestureRecognizer {
             API.PostLikes.inrementLikes(postId: self.post!.id!, completion: { post in
                self.updateLike(post: post!)
+                self.post?.likes = post?.likes
+                self.post?.isLiked = post?.isLiked
+                self.post?.likeCount = post?.likeCount
+
             }, onError: { error in
                 ProgressHUD.showError(error)
             })
         }
     }
 
-    func updateLike(post: Post) {
+    func updateLike(post: PostModel) {
         let imageName = post.likes == nil || !post.isLiked! ? ImageName.like : ImageName.likeSelected
         likesUIImage.image = UIImage(named: imageName)
         guard let count = post.likeCount else { return }

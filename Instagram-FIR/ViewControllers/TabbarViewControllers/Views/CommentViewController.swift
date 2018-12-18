@@ -18,7 +18,7 @@ class CommentViewController: UIViewController {
 
     var postId: String!
     var comments = [Comment]()
-    var users = [User]()
+    var users = [UserModel]()
 
     var loadPostAPI = LoadPostAPI()
 

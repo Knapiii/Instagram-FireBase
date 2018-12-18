@@ -14,8 +14,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    var posts = [Post]()
-    var users = [User]()
+    var posts = [PostModel]()
+    var users = [UserModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +25,19 @@ class HomeViewController: UIViewController {
 
     func loadPosts() {
         activityIndicator.startAnimating()
-        API.loadPost.observePost { (post) in
+        API.Feed.observeFeed(withId: API.user.currentUser!.uid) { (post) in
             guard let postId = post.uid else { return }
             self.fetchUser(uid: postId, completion: {
                 self.posts.append(post)
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
             })
+        }
+
+        API.Feed.observeFeedRemoved(withId: API.user.currentUser!.uid) { (post) in
+            self.posts = self.posts.filter { $0.id != post.id }
+            self.users = self.users.filter { $0.id != post.uid }
+            self.tableView.reloadData()
         }
     }
 

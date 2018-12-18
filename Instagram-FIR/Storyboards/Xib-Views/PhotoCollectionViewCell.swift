@@ -12,7 +12,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var photo: UIImageView!
 
-    var post: Post? {
+    var post: PostModel? {
         didSet {
             fetchPostInformation()
         }

@@ -13,8 +13,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var user: User!
-    var posts: [Post] = []
+    var user: UserModel!
+    var posts: [PostModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

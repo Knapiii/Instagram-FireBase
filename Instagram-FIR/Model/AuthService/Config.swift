@@ -10,7 +10,7 @@ import Foundation
 
 struct AuthConfig {
     static let FIRUrl = "https://instagram-fir.firebaseio.com"
-    static let StorageUrl = "gs://instagram-fir.appspot.com"
+    static let storageUrl = "gs://instagram-fir.appspot.com"
     static let userUrl = "users"
     static let profilePictureUrl = "profile_image"
     static let postUrl = "posts"
@@ -18,6 +18,9 @@ struct AuthConfig {
     static let postCommentUrl = "post-comment"
     static let likesUrl = "likes"
     static let myPostsUrl = "myPosts"
+    static let followers = "followers"
+    static let following = "following"
+    static let feed = "feed"
 }
 
 struct FIRStrings {
@@ -25,6 +28,7 @@ struct FIRStrings {
 
     //Sign
     static let username = "username"
+    static let usernameLowerCase = "username_lowercase"
     static let email = "email"
     static let profileImageUrl = "profileImageUrl"
 

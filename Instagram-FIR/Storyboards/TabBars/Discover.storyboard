@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,12 +22,58 @@
                     <tabBarItem key="tabBarItem" title="" image="Search" selectedImage="Search_Selected" id="Hzs-cj-AGt">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Discover" id="y70-FM-E4T"/>
+                    <navigationItem key="navigationItem" title="Discover" id="y70-FM-E4T">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="o9A-C0-3vt">
+                            <connections>
+                                <segue destination="arN-Y8-oPi" kind="show" id="an5-NI-bUl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5r-Sm-78i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="716" y="142.57871064467767"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="8cZ-cj-yxE">
+            <objects>
+                <viewController id="arN-Y8-oPi" customClass="SearchViewController" customModule="Instagram_FIR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8ON-Ru-rW0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bXe-Uy-evc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UsersTableViewCell" rowHeight="55" id="Rul-9G-kBw" customClass="UsersTableViewCell" customModule="Instagram_FIR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rul-9G-kBw" id="7cp-fP-2Yy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bXe-Uy-evc" firstAttribute="top" secondItem="8ON-Ru-rW0" secondAttribute="top" id="0Xx-6g-m6A"/>
+                            <constraint firstItem="bXe-Uy-evc" firstAttribute="trailing" secondItem="4HT-QI-lXh" secondAttribute="trailing" id="T7y-RW-FEe"/>
+                            <constraint firstItem="bXe-Uy-evc" firstAttribute="leading" secondItem="4HT-QI-lXh" secondAttribute="leading" id="X2T-VF-rwx"/>
+                            <constraint firstAttribute="bottom" secondItem="bXe-Uy-evc" secondAttribute="bottom" id="mnZ-gm-bYZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4HT-QI-lXh"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="bXe-Uy-evc" id="NN2-tC-Ayq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvN-bF-cf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1553" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RBE-2a-hMY">
